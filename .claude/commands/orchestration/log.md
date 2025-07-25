@@ -12,6 +12,22 @@ Log work from orchestrated tasks to external project management tools like Linea
 
 Automatically creates work logs in your connected project management tools or knowledge bases, transferring task completion data, time spent, and progress notes to keep external systems synchronized.
 
+**Important**: When implementing date-based functionality, always use bash commands to get the actual current date:
+- Use `date +"%Y-%m-%d"` for YYYY-MM-DD format (e.g., 2024-03-15)
+- Use `date +"%m_%d_%Y"` for MM_DD_YYYY format (e.g., 03_15_2024)
+- Use `date +"%B %d, %Y"` for readable format (e.g., March 15, 2024)
+- Use `date +"%H:%M"` for current time (e.g., 15:30)
+
+## Instructions
+
+When executing this command, ensure all dates and times are dynamically generated using bash commands:
+1. Always use `date` command to get current date/time rather than hardcoded values
+2. Format dates appropriately for the target system:
+   - Obsidian filenames: Use `date +"%Y-%m-%d"` format
+   - Directory structure: Use `date +"%m_%d_%Y"` format  
+   - Display dates: Use `date +"%B %d, %Y"` format
+   - Times: Use `date +"%H:%M"` format
+
 ## Basic Commands
 
 ### Log Current Task
@@ -55,10 +71,10 @@ Choose destination [1-5]:
 ```
 /orchestration/log --obsidian-daily
 ```
-Appends to today's daily note:
+Appends to today's daily note (filename derived from current date using `date +"%Y-%m-%d"`):
 
 ```markdown
-## Work Log - 15:30
+## Work Log - {current_time}  # Use: $(date +"%H:%M")
 
 ### TASK-003: JWT Implementation ✅
 
@@ -130,7 +146,7 @@ Use suggestion? [Y/n/choose different]
 ### Summary
 - **Status**: 🟢 Completed  
 - **Duration**: 4h 30m
-- **Date**: 2024-03-15
+- **Date**: {current_date} // Use: $(date +"%Y-%m-%d")
 
 ### Progress Details
 - [x] Token structure design
@@ -154,7 +170,7 @@ Use suggestion? [Y/n/choose different]
 - [ ] Update API documentation
 
 ---
-*Logged via Task Orchestration at 15:30*
+*Logged via Task Orchestration at {current_time}*  # Use: $(date +"%H:%M")*
 ```
 
 ### Linear Format
@@ -184,7 +200,7 @@ Press Enter to confirm, Space to toggle
 
 Creates summary in daily note:
 
-## Work Summary - 2024-03-15
+## Work Summary - {current_date} // Use: $(date +"%Y-%m-%d")
 
 ### Completed Tasks
 - [[TASK-003]]: JWT Implementation (4.5h) ✅
@@ -216,7 +232,7 @@ Creates summary in daily note:
 ```yaml
 obsidian_template:
   daily_note:
-    heading: "## Work Log - {time}"
+    heading: "## Work Log - {time}"  # Use: $(date +"%H:%M")
     include_stats: true
     add_tags: true
     link_tasks: true
@@ -266,7 +282,10 @@ View logs? [y/N]:
 ```
 /orchestration/log --eod
 
-End of Day Summary:
+# First, get current date and time
+# Execute: date +"%Y-%m-%d %H:%M"
+
+End of Day Summary ($(date +"%Y-%m-%d")):
 - 3 tasks worked on
 - 7.5 hours logged
 - 2 completed, 1 in progress
@@ -279,7 +298,7 @@ Log to:
 
 Choice [1]: 1
 
-✓ Daily work log created in Obsidian
+✓ Daily work log created in Obsidian ($(date +"%Y-%m-%d").md)
 ```
 
 ### Example 2: Sprint Review
