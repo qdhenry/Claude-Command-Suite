@@ -1,15 +1,15 @@
 # Claude Command Suite
 
 ![Version](https://img.shields.io/badge/version-3.5.0-blue?style=for-the-badge)
-![Total Commands](https://img.shields.io/badge/Total%20Commands-119%20and%20growing!-brightgreen?style=for-the-badge)
-![AI Agents](https://img.shields.io/badge/AI%20Agents-10%20Intelligent%20Assistants-red?style=for-the-badge)
+![Total Commands](https://img.shields.io/badge/Total%20Commands-135%20and%20growing!-brightgreen?style=for-the-badge)
+![AI Agents](https://img.shields.io/badge/AI%20Agents-13%20Intelligent%20Assistants-red?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/qdhenry/Claude-Command-Suite?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)
 <!-- Dynamic badge (will work after PR merge): ![Total Commands](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/qdhenry/Claude-Command-Suite/main/.github/badges/command-count.json&style=for-the-badge) -->
 
 > **Inspired by Anthropic's Claude Code Best Practices**: A comprehensive development toolkit designed following [Anthropic's Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) to maximize AI-assisted software development effectiveness.
 
-**Claude Command Suite** is a powerful collection of 119+ custom slash commands, 10 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
+**Claude Command Suite** is a powerful collection of 135+ custom slash commands, 13 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
 
 - **🚀 Slash Commands**: Organized namespace commands like `/dev:code-review`, `/test:generate-test-cases`, and `/deploy:prepare-release` for consistent, thorough development workflows
 - **🤖 AI Agents**: Specialized assistants that proactively handle complex tasks like security auditing, test coverage optimization, and cross-platform issue synchronization
@@ -23,7 +23,7 @@
 
 **Transform your commands into proactive AI assistants!**
 
-[![AI Agents](https://img.shields.io/badge/🤖_AI_Agents-9_Specialized_Assistants-ff6b6b?style=for-the-badge&labelColor=4c1d95)](.claude/agents/README.md)
+[![AI Agents](https://img.shields.io/badge/🤖_AI_Agents-12_Specialized_Assistants-ff6b6b?style=for-the-badge&labelColor=4c1d95)](.claude/agents/README.md)
 [![Workflows](https://img.shields.io/badge/🔄_Workflows-10+_Automated-4ecdc4?style=for-the-badge&labelColor=1a535c)](.claude/agents/WORKFLOW_EXAMPLES.md)
 [![Learn More](https://img.shields.io/badge/📚_Learn_More-Agent_Documentation-ffd93d?style=for-the-badge&labelColor=2d3436)](.claude/agents/README.md)
 
@@ -35,6 +35,9 @@
 - **🧪 Test Engineer**: Intelligent test generation with 90%+ coverage targets
 - **🔄 Integration Manager**: Seamless GitHub-Linear synchronization
 - **📊 Strategic Analyst**: Business scenario modeling and decision support
+- **⚛️ Svelte Development**: Expert Svelte 5+ and SvelteKit development assistant
+- **📚 Svelte Storybook**: Component documentation and visual testing specialist
+- **🧪 Svelte Testing**: Comprehensive testing specialist for Svelte applications
 - **🚀 And More**: Project setup, release management, architecture analysis
 
 [**→ Explore AI Agents Documentation**](.claude/agents/README.md) | [**→ See Workflow Examples**](.claude/agents/WORKFLOW_EXAMPLES.md)
@@ -87,9 +90,9 @@ claude code
 <a id="available-commands"></a>
 ## Available Commands
 
-🚀 **119+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
+🚀 **135+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
 
-🤖 **NEW: 9 Intelligent AI Agents** - Transform commands into proactive assistants! [Learn more about AI Agents](.claude/agents/README.md)
+🤖 **NEW: 13 Intelligent AI Agents** - Transform commands into proactive assistants! [Learn more about AI Agents](.claude/agents/README.md)
 
 ### 🎯 Quick Navigation to Command Namespaces
 
@@ -97,7 +100,7 @@ claude code
 |:--------------------:|:--------------------:|:--------------:|:----------------:|:------------:|
 | [🚀 Project](#-project---project-management) | [🧪 Test](#-test---testing-suite) | [📦 Deploy](#-deploy---deployment--release) | [👥 Team](#-team---team-collaboration) | [🎯 Simulation](#-simulation---ai-reality-simulators) |
 | [💻 Dev](#-dev---development-tools) | [🔒 Security](#-security---security--compliance) | [📚 Docs](#-docs---documentation-generation) | [🔄 Sync](#-sync---integration--synchronization) | [📋 Orchestration](#-orchestration---task-orchestration) |
-| [🔧 Setup](#-setup---configuration--setup) | [⚡ Performance](#-performance---performance-optimization) |  |  |  |
+| [🔧 Setup](#-setup---configuration--setup) | [⚡ Performance](#-performance---performance-optimization) | [⚛️ Svelte](#-svelte---svelte-development) |  |  |
 
 <a id="command-namespaces"></a>
 ## Command Namespaces
@@ -241,6 +244,26 @@ Team workflow tools including standup reports, sprint planning, retrospectives, 
 - [`/team:migration-assistant`](.claude/commands/team/migration-assistant.md) - Assist with system migration planning
 - [`/team:decision-quality-analyzer`](.claude/commands/team/decision-quality-analyzer.md) - Analyze decision quality with scenario testing
 
+### ⚛️ `/svelte:*` - Svelte Development
+Comprehensive Svelte 5+ and SvelteKit development tools covering component creation, testing, performance optimization, Storybook integration, and migration assistance.
+
+- [`/svelte:a11y`](.claude/commands/svelte/svelte:a11y.md) - Audit and improve accessibility in Svelte/SvelteKit applications, ensuring WCAG compliance and inclusive user experiences
+- [`/svelte:component`](.claude/commands/svelte/svelte:component.md) - Create new Svelte components with best practices, proper structure, and optional TypeScript support
+- [`/svelte:debug`](.claude/commands/svelte/svelte:debug.md) - Help debug Svelte and SvelteKit issues by analyzing error messages, stack traces, and common problems
+- [`/svelte:migrate`](.claude/commands/svelte/svelte:migrate.md) - Migrate Svelte/SvelteKit projects between versions, adopt new features like runes, and handle breaking changes
+- [`/svelte:optimize`](.claude/commands/svelte/svelte:optimize.md) - Optimize Svelte/SvelteKit applications for performance, including bundle size reduction, rendering optimization, and loading performance
+- [`/svelte:scaffold`](.claude/commands/svelte/svelte:scaffold.md) - Scaffold new SvelteKit projects, features, or modules with best practices and optimal project structure
+- [`/svelte:storybook-migrate`](.claude/commands/svelte/svelte:storybook-migrate.md) - Migrate Storybook configurations and stories to newer versions, including Svelte CSF v5 and @storybook/sveltekit framework
+- [`/svelte:storybook-mock`](.claude/commands/svelte/svelte:storybook-mock.md) - Mock SvelteKit modules and functionality in Storybook stories for isolated component development
+- [`/svelte:storybook-setup`](.claude/commands/svelte/svelte:storybook-setup.md) - Initialize and configure Storybook for SvelteKit projects with optimal settings and structure
+- [`/svelte:storybook-story`](.claude/commands/svelte/svelte:storybook-story.md) - Create comprehensive Storybook stories for Svelte components using modern patterns and best practices
+- [`/svelte:storybook-troubleshoot`](.claude/commands/svelte/svelte:storybook-troubleshoot.md) - Diagnose and fix common Storybook issues in SvelteKit projects, including build errors, module problems, and configuration issues
+- [`/svelte:storybook`](.claude/commands/svelte/svelte:storybook.md) - General-purpose Storybook assistance for SvelteKit projects, including setup guidance, best practices, and common tasks
+- [`/svelte:test-coverage`](.claude/commands/svelte/svelte:test-coverage.md) - Analyze test coverage, identify testing gaps, and provide recommendations for improving test coverage in Svelte/SvelteKit projects
+- [`/svelte:test-fix`](.claude/commands/svelte/svelte:test-fix.md) - Troubleshoot and fix failing tests in Svelte/SvelteKit projects, including debugging test issues and resolving common testing problems
+- [`/svelte:test-setup`](.claude/commands/svelte/svelte:test-setup.md) - Set up comprehensive testing infrastructure for Svelte/SvelteKit projects, including unit testing, component testing, and E2E testing frameworks
+- [`/svelte:test`](.claude/commands/svelte/svelte:test.md) - Create comprehensive tests for Svelte components and SvelteKit routes, including unit tests, component tests, and E2E tests
+
 ### 🎯 `/simulation:*` - AI Reality Simulators
 *Inspired by "AI agents at their most under-leveraged point" by AI News & Strategy Daily | Nate B. Jones*
 
@@ -350,6 +373,15 @@ Commands are available as `/namespace:command-name` in Claude Code. Each command
 /orchestration:status                       # Monitor progress
 /orchestration:resume                       # Continue after breaks
 /orchestration:commit                       # Create linked Git commits
+```
+
+**Svelte/SvelteKit Development:**
+```bash
+/svelte:scaffold                            # Create new SvelteKit project
+/svelte:component Button                    # Create new component
+/svelte:storybook-setup                     # Set up Storybook
+/svelte:test-setup                          # Configure testing
+/svelte:optimize                            # Optimize performance
 ```
 
 <a id="need-more-details"></a>
