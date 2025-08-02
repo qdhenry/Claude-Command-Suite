@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.7.0] - 2025-08-02
+
+### Added
+- **🎨 UI Redesign Specialist Agent** - Expert in analyzing screenshots and implementing pixel-perfect UI designs
+  - Comprehensive visual analysis of design elements
+  - Preservation of existing functionality during redesigns
+  - Tailwind CSS implementation with design system compliance
+  - Responsive design support across all screen sizes
+- **UI Commands Namespace** - New command category for visual design implementation
+  - `/ui/redesign` - Analyze screenshots and implement UI redesigns
+- Enhanced agent count to 55 intelligent assistants
+
 ## [3.6.0] - 2025-07-30
 
 ### Added
