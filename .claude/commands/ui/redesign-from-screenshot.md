@@ -14,6 +14,38 @@ examples:
 
 This command invokes the ui-redesign-specialist agent to analyze screenshots and implement UI redesigns while preserving existing functionality.
 
+## Instructions
+
+1. **Analyze Screenshot Requirements**
+   - Read and examine all provided screenshot files
+   - Identify visual elements, layout, spacing, and design patterns
+   - Catalog colors, typography, and interactive components
+   - Note responsive design requirements and breakpoints
+
+2. **Examine Existing Implementation**
+   - Locate current implementation files
+   - Document existing functionality and business logic
+   - Map data flows and component relationships
+   - Identify event handlers and state management patterns
+
+3. **Create Implementation Plan**
+   - Determine component reuse vs creation needs
+   - Plan Tailwind CSS integration strategy
+   - Ensure functionality preservation approach
+   - Consider accessibility requirements
+
+4. **Implement Design Changes**
+   - Apply visual changes using Tailwind CSS
+   - Maintain existing event handlers and state management
+   - Ensure responsive behavior matches design
+   - Preserve all existing functionality
+
+5. **Validate Implementation**
+   - Compare result against original screenshots
+   - Test all existing functionality
+   - Verify accessibility compliance
+   - Check responsive behavior across breakpoints
+
 ## Arguments Processing
 {{#if args}}
   {{#each args}}
