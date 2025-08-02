@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
   - Tailwind CSS implementation with design system compliance
   - Responsive design support across all screen sizes
 - **UI Commands Namespace** - New command category for visual design implementation
-  - `/ui/redesign` - Analyze screenshots and implement UI redesigns
+  - `/ui/redesign-from-screenshot` - Analyze screenshots and implement UI redesigns
 - Enhanced agent count to 55 intelligent assistants
 
 ## [3.6.0] - 2025-07-30

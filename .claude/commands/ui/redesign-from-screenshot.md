@@ -1,13 +1,13 @@
 ---
-name: redesign
+name: redesign-from-screenshot
 description: Analyze screenshots and implement UI redesigns using the project's design system and Tailwind CSS
-usage: /redesign <screenshot1> [screenshot2] [screenshot3] ...
+usage: /redesign-from-screenshot <screenshot1> [screenshot2] [screenshot3] ...
 version: 1.0.0
 author: Claude Code
 examples:
-  - /redesign screenshot.png
-  - /redesign dashboard.png login.png settings.png
-  - /redesign /path/to/design/mockup.jpg
+  - /redesign-from-screenshot screenshot.png
+  - /redesign-from-screenshot dashboard.png login.png settings.png
+  - /redesign-from-screenshot /path/to/design/mockup.jpg
 ---
 
 # UI Redesign Command
@@ -43,5 +43,5 @@ Screenshots to analyze:
 
 Please start by reading the screenshot files and analyzing their visual elements."
 {{else}}
-Error: No screenshots provided. Usage: /redesign <screenshot1> [screenshot2] ...
+Error: No screenshots provided. Usage: /redesign-from-screenshot <screenshot1> [screenshot2] ...
 {{/if}}

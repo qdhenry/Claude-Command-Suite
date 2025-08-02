@@ -4,15 +4,15 @@ UI-focused commands for visual design implementation and user interface developm
 
 ## Available Commands
 
-### /redesign
+### /redesign-from-screenshot
 Analyze screenshots and implement UI redesigns using the project's design system and Tailwind CSS while preserving all existing functionality.
 
-**Usage**: `/redesign <screenshot1> [screenshot2] ...`
+**Usage**: `/redesign-from-screenshot <screenshot1> [screenshot2] ...`
 
 **Examples**:
-- `/redesign dashboard.png` - Implement a single screen redesign
-- `/redesign login.png register.png` - Update multiple screens
-- `/redesign /path/to/mockup.jpg` - Use design files from any location
+- `/redesign-from-screenshot dashboard.png` - Implement a single screen redesign
+- `/redesign-from-screenshot login.png register.png` - Update multiple screens
+- `/redesign-from-screenshot /path/to/mockup.jpg` - Use design files from any location
 
 **Features**:
 - Visual analysis of design elements
