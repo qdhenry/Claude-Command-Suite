@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Agents](https://img.shields.io/badge/AI_Agents-55-purple?style=for-the-badge)
+![Agents](https://img.shields.io/badge/AI_Agents-54-purple?style=for-the-badge)
 ![Workflows](https://img.shields.io/badge/Workflows-10+-orange?style=for-the-badge)
 ![Context Isolation](https://img.shields.io/badge/Context-Isolated-green?style=for-the-badge)
 ![Automation](https://img.shields.io/badge/Automation-Proactive-blue?style=for-the-badge)
@@ -150,21 +150,6 @@ Claude Command Suite Agents are specialized AI assistants that transform the 110
 </details>
 
 <details>
-<summary><b>UI Redesign Specialist</b> - Visual design implementation expert</summary>
-
-**Agent**: `ui-redesign-specialist`  
-**Expertise**: UI/UX implementation, Tailwind CSS, design systems  
-**Auto-triggers**: Screenshot analysis, UI updates, design implementation  
-**Tools**: Read, Write, Edit, Bash, Grep, Glob
-
-```bash
-# Example usage
-"Implement this new dashboard design from the screenshot"
-"Update the login screen to match the new design mockup"
-```
-</details>
-
-<details>
 <summary><b>Project Architect</b> - Project setup and structure specialist</summary>
 
 **Agent**: `project-architect`  
@@ -276,7 +261,6 @@ graph TD
 | performance-auditor | ✓ | ✗ | ✗ | ✓ | ✗ | ✗ | Performance |
 | architecture-auditor | ✓ | ✗ | ✗ | ✓ | ✗ | ✗ | Architecture |
 | test-engineer | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | Testing |
-| ui-redesign-specialist | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | UI Design |
 | integration-manager | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | Integration |
 | strategic-analyst | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | Planning |
 | project-architect | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ | Project Setup |
