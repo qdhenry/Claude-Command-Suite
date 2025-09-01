@@ -1,7 +1,7 @@
 # Claude Command Suite
 
 ![Version](https://img.shields.io/badge/version-3.7.0-blue?style=for-the-badge)
-![Total Commands](https://img.shields.io/badge/Total%20Commands-119%20and%20growing!-brightgreen?style=for-the-badge)
+![Total Commands](https://img.shields.io/badge/Total%20Commands-122%20and%20growing!-brightgreen?style=for-the-badge)
 ![AI Agents](https://img.shields.io/badge/AI%20Agents-54%20Intelligent%20Assistants-red?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/qdhenry/Claude-Command-Suite?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)
@@ -9,7 +9,7 @@
 
 > **Inspired by Anthropic's Claude Code Best Practices**: A comprehensive development toolkit designed following [Anthropic's Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) to maximize AI-assisted software development effectiveness.
 
-**Claude Command Suite** is a powerful collection of 119+ custom slash commands, 54 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
+**Claude Command Suite** is a powerful collection of 122+ custom slash commands, 54 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
 
 - **🚀 Slash Commands**: Organized namespace commands like `/dev:code-review`, `/test:generate-test-cases`, and `/deploy:prepare-release` for consistent, thorough development workflows
 - **🤖 AI Agents**: Specialized assistants that proactively handle complex tasks like security auditing, test coverage optimization, and cross-platform issue synchronization
@@ -87,7 +87,7 @@ claude code
 <a id="available-commands"></a>
 ## Available Commands
 
-🚀 **119+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
+🚀 **122+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
 
 🤖 **NEW: 54 Intelligent AI Agents** - Transform commands into proactive assistants! [Learn more about AI Agents](.claude/agents/README.md)
 
