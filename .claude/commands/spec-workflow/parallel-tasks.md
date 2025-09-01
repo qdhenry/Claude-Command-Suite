@@ -6,56 +6,35 @@ allowed-tools: Task, TodoWrite, mcp__spec-workflow__spec-list, mcp__spec-workflo
 
 Deploy specialized AI agents to work on multiple tasks simultaneously while maintaining coordination and task tracking. This command can reduce development time by 60-80% through intelligent agent coordination and task parallelization.
 
-## Required Rules
-
-**IMPORTANT:** Before executing this command:
-
-- Verify project has active task management system (spec-workflow, GitHub, Linear)
-- Ensure no conflicting processes are running (other builds, deploys)
-- Check system resources available for parallel agent execution
-
-## Arguments
-
-- `--system <TYPE>` - Task management system: spec-workflow, github, linear, manual
-- `--project-path <PATH>` - Absolute path to project root (default: current directory)
-- `--spec-name <NAME>` - Specification name (required for spec-workflow system)
-- `--auto-assign` - Automatically assign tasks to optimal agents (recommended)
-- `--max-agents <NUMBER>` - Maximum parallel agents (default: 4, range: 1-8)
-- `--dry-run` - Preview task assignments without execution
-- `--conflict-resolution <MODE>` - Handle conflicts: abort, merge, manual (default: abort)
-- `--resource-limit <LEVEL>` - Resource usage: low, medium, high (default: medium)
-- `--help` - Display comprehensive help documentation
-
-## Preflight Checklist
-
-Before proceeding, complete these validation steps:
-
-### 1. Help Flag Detection
-- If `--help` flag is present, display comprehensive help documentation instead of executing
-- Reference the complete help content from `parallel-tasks-help.md`
-- Do not proceed with task execution when help is requested
-
-### 2. System Connectivity Check
-- **Spec-Workflow**: Verify MCP server connection: `mcp__spec-workflow__spec-list`
-- **GitHub**: Check gh CLI access: `gh auth status`  
-- **Linear**: Test Linear MCP connection: `mcp__linear__list_projects`
-- If system unavailable, suggest alternative system or troubleshooting
-
-### 3. Project Path Validation
-- Verify project directory exists and is accessible
-- Check for git repository: `git status 2>/dev/null`
-- Validate write permissions for temporary files
-- Confirm project structure matches expected system type
-
-### 4. Resource Assessment
-- Check available system resources (CPU, memory)
-- Validate max-agents parameter is within safe limits (1-8)
-- Warn if resource-limit is high and recommend monitoring
-- Ensure no other intensive processes are running
-
 ## Instructions
 
-### Phase 1: Task Discovery and Analysis
+### 1. **Prerequisites and Setup**
+   - Verify project has active task management system (spec-workflow, GitHub, Linear)
+   - Ensure no conflicting processes are running (other builds, deploys)
+   - Check system resources available for parallel agent execution
+   - Review available command arguments:
+     - `--system <TYPE>` - Task management system: spec-workflow, github, linear, manual
+     - `--project-path <PATH>` - Absolute path to project root (default: current directory)
+     - `--spec-name <NAME>` - Specification name (required for spec-workflow system)
+     - `--auto-assign` - Automatically assign tasks to optimal agents (recommended)
+     - `--max-agents <NUMBER>` - Maximum parallel agents (default: 4, range: 1-8)
+     - `--dry-run` - Preview task assignments without execution
+     - `--conflict-resolution <MODE>` - Handle conflicts: abort, merge, manual (default: abort)
+     - `--resource-limit <LEVEL>` - Resource usage: low, medium, high (default: medium)
+     - `--help` - Display comprehensive help documentation
+
+### 2. **Preflight Validation**
+   - **Help Flag Detection**: If `--help` flag is present, display comprehensive help documentation instead of executing
+   - **System Connectivity Check**:
+     - **Spec-Workflow**: Verify MCP server connection: `mcp__spec-workflow__spec-list`
+     - **GitHub**: Check gh CLI access: `gh auth status`  
+     - **Linear**: Test Linear MCP connection: `mcp__linear__list_projects`
+   - **Project Path Validation**: Verify project directory exists, check for git repository
+   - **Resource Assessment**: Check available system resources and validate max-agents parameter (1-8)
+
+### 3. **Execute Parallel Task Processing**
+
+   **Phase 1: Task Discovery and Analysis**
 
 **System Integration:**
 - Connect to specified task management system
@@ -78,7 +57,7 @@ Before proceeding, complete these validation steps:
 - Independent tasks of different types → Prime candidates for parallelization
 - Large tasks → Consider if they can be subdivided
 
-### Phase 2: Agent Assignment Strategy
+   **Phase 2: Agent Assignment Strategy**
 
 **Task Categorization:**
 
@@ -119,7 +98,7 @@ Documentation Tasks:
 - Resource conflict prevention (database, external services)
 - Dependency ordering (Task A must complete before Task B)
 
-### Phase 3: Parallel Agent Deployment
+   **Phase 3: Parallel Agent Deployment**
 
 **Pre-Deployment Validation:**
 - Confirm no file conflicts in task assignments
@@ -159,7 +138,7 @@ Task {agent_type} agent to handle: {task_descriptions}
 Task(subagent_type=agent_type, description=task_summary, prompt=full_prompt)
 ```
 
-### Phase 4: Coordination and Monitoring
+   **Phase 4: Coordination and Monitoring**
 
 **Real-time Coordination:**
 - Track agent progress through TodoWrite updates
@@ -178,7 +157,7 @@ Task(subagent_type=agent_type, description=task_summary, prompt=full_prompt)
 - Resource exhaustion: Reduce active agents, queue remaining tasks
 - System connectivity loss: Cache progress, retry when restored
 
-### Phase 5: Integration and Validation
+   **Phase 5: Integration and Validation**
 
 **Post-Execution Validation:**
 - Verify all parallel work integrates properly
@@ -197,7 +176,7 @@ Task(subagent_type=agent_type, description=task_summary, prompt=full_prompt)
 - Update overall project/specification progress
 - Generate completion summary with metrics
 
-### Phase 6: Reporting and Cleanup
+   **Phase 6: Reporting and Cleanup**
 
 **Completion Summary:**
 ```
@@ -232,9 +211,8 @@ Task(subagent_type=agent_type, description=task_summary, prompt=full_prompt)
   {recommendations_for_future_runs}
 ```
 
-## Error Handling Procedures
-
-### Common Error Scenarios
+### 4. **Error Handling and Recovery**
+   **Common Error Scenarios**
 
 **System Connectivity Issues:**
 ```
@@ -260,7 +238,7 @@ Error: Agent failed to complete assigned task
 Action: 1. Review agent logs, 2. Reassign task manually, 3. Continue with remaining agents
 ```
 
-### Recovery Procedures
+   **Recovery Procedures**
 
 **Partial Completion Recovery:**
 1. Assess which tasks were completed successfully
@@ -275,9 +253,8 @@ Action: 1. Review agent logs, 2. Reassign task manually, 3. Continue with remain
 4. Apply chosen resolution strategy
 5. Validate resolution and continue
 
-## Advanced Options
-
-### Dry Run Mode
+### 5. **Advanced Configuration**
+   **Dry Run Mode**
 When `--dry-run` is specified:
 1. Perform full task discovery and analysis
 2. Show proposed agent assignments
@@ -285,20 +262,20 @@ When `--dry-run` is specified:
 4. Estimate time savings and resource usage
 5. Exit without deploying any agents
 
-### Custom Agent Selection
+   **Custom Agent Selection**
 When specific agents are requested:
 1. Validate agent availability and capabilities
 2. Match requested agents to available tasks
 3. Warn if agent-task mismatch detected
 4. Proceed with user-specified assignments
 
-### Resource Management
+   **Resource Management**
 Based on `--resource-limit` setting:
 - **Low**: Max 2 agents, minimal system impact, extended timeouts
 - **Medium**: Max 4 agents, balanced performance, standard timeouts  
 - **High**: Max 8 agents, maximum performance, aggressive timeouts
 
-## Important Notes
+### 6. **Important Notes and Best Practices**
 
 - **Always validate** task assignments before agent deployment
 - **Monitor system resources** during parallel execution

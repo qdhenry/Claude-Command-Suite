@@ -6,19 +6,46 @@ allowed-tools: TodoWrite, mcp__spec-workflow__spec-list, mcp__spec-workflow__man
 
 Display comprehensive help documentation for the `/parallel-tasks` command including usage examples, options, agent types, and best practices for deploying specialized agents to work on multiple tasks simultaneously.
 
-## Command Purpose
-
-The `/parallel-tasks --help` command provides complete documentation for the parallel task execution system, which can reduce development time by 60-80% through intelligent agent coordination and task parallelization.
-
 ## Instructions
 
-When this command is executed with the `--help` flag, display the comprehensive help documentation below. This command should not execute any tasks but only show the help information to guide users on how to use the parallel-tasks system.
+### 1. **Display Command Synopsis**
+   - Show the basic command structure and purpose
+   - Explain that this reduces development time by 60-80% through intelligent agent coordination
+   - Present the command synopsis in a clear format
 
-## Help Documentation Display
+### 2. **Present Core Options and Arguments**
+   - Display all available command-line options with descriptions
+   - Show default values and acceptable ranges where applicable
+   - Provide quick start examples for common usage patterns
 
-When executed, display the following comprehensive help information:
+### 3. **Show Specialized Agent Types**
+   - List all available agent types categorized by function
+   - Include brief descriptions of each agent's capabilities
+   - Show which agents work best for different types of tasks
 
-### Command Synopsis
+### 4. **Explain Task Management Systems**
+   - Document supported task management integrations
+   - Provide configuration examples for each system
+   - Show when to use each system type
+
+### 5. **Display Workflow Information**
+   - Show the six-phase execution workflow
+   - Explain safety and coordination features
+   - Present performance expectations and success rates
+
+### 6. **Provide Troubleshooting Guide**
+   - List common issues and their solutions
+   - Show exit codes and their meanings
+   - Include debugging and logging information
+
+### 7. **Present Usage Examples**
+   - Show scenario-based examples with actual commands
+   - Include best practices and recommendations
+   - Provide file and configuration references
+
+**Complete Help Documentation to Display:**
+
+**Command Synopsis**
 ```
 /parallel-tasks [OPTIONS]
 
@@ -26,7 +53,7 @@ Deploy specialized AI agents to work on multiple tasks simultaneously while
 maintaining coordination and task tracking.
 ```
 
-### Core Options
+**Core Options**
 - `--system <TYPE>` - Task management system (spec-workflow, github, linear, manual)
 - `--project-path <PATH>` - Absolute path to project root (default: current directory)  
 - `--spec-name <NAME>` - Specification name (required for spec-workflow)
@@ -35,7 +62,7 @@ maintaining coordination and task tracking.
 - `--dry-run` - Preview task assignments without execution
 - `--help` - Display this help message
 
-### Quick Start Examples
+**Quick Start Examples**
 ```bash
 # Most common usage
 /parallel-tasks --system spec-workflow --spec-name my-feature --auto-assign
@@ -50,7 +77,7 @@ maintaining coordination and task tracking.
 /parallel-tasks --max-agents 2 --auto-assign
 ```
 
-### Specialized Agent Types
+**Specialized Agent Types**
 
 **Development Agents:**
 - `typescript-pro` - TypeScript development and refactoring
@@ -72,7 +99,7 @@ maintaining coordination and task tracking.
 - `documentation-expert` - Technical documentation creation
 - `api-documenter` - API documentation and examples
 
-### Task Management Systems
+**Task Management Systems**
 
 **Spec-Workflow (Primary):**
 - Integrates with spec-workflow MCP server
@@ -93,7 +120,7 @@ maintaining coordination and task tracking.
 - Interactive or file-based task management
 - Best for: Ad-hoc tasks, custom workflows
 
-### Workflow Phases
+**Workflow Phases**
 
 1. **Discovery** - Connect to task system, retrieve pending tasks
 2. **Analysis** - Group tasks by type, identify conflicts
@@ -101,7 +128,7 @@ maintaining coordination and task tracking.
 4. **Coordination** - Monitor progress, handle dependencies
 5. **Integration** - Validate changes, resolve conflicts
 
-### Safety & Coordination
+**Safety & Coordination**
 
 **Conflict Prevention:**
 - File modification tracking prevents conflicts
@@ -115,7 +142,7 @@ maintaining coordination and task tracking.
 - Post-execution integration testing
 - Automated rollback on critical failures
 
-### Performance Expectations
+**Performance Expectations**
 
 **Time Savings:**
 - 2-3 parallel agents: 40-60% time reduction
@@ -127,7 +154,7 @@ maintaining coordination and task tracking.
 - Complex integrations: 85-90% success rate
 - Ad-hoc workflows: 75-85% success rate
 
-### Troubleshooting Common Issues
+**Troubleshooting Common Issues**
 
 **Build Conflicts:**
 ```
@@ -147,7 +174,7 @@ Symptom: "Task B failed because Task A not completed"
 Solution: Review dependencies, may need sequential execution
 ```
 
-### Best Practices
+**Best Practices**
 
 ✅ **Start with `--dry-run`** to preview assignments  
 ✅ **Begin with 2-3 agents** for new projects  
@@ -159,7 +186,7 @@ Solution: Review dependencies, may need sequential execution
 ❌ **Avoid** for shared critical files  
 ❌ **Avoid** for single complex tasks that can't be subdivided  
 
-### Usage by Scenario
+**Usage by Scenario**
 
 **Feature Development:**
 ```bash
@@ -179,7 +206,7 @@ Solution: Review dependencies, may need sequential execution
 ```
 *Coordinates deployment scripts, performance validation, release notes*
 
-### Exit Codes
+**Exit Codes**
 - `0` - Success: All tasks completed successfully
 - `1` - Partial Success: Some tasks completed, others failed  
 - `2` - Configuration Error: Invalid options or missing requirements
@@ -187,7 +214,7 @@ Solution: Review dependencies, may need sequential execution
 - `4` - Conflict Error: Unresolvable conflicts detected
 - `5` - Resource Error: Insufficient system resources
 
-### Files and Configuration
+**Files and Configuration**
 - Configuration: `~/.claude-code/parallel-tasks.config`
 - Logs: `~/.claude-code/logs/parallel-tasks/`
 - Temporary: `/tmp/claude-code-parallel-*/`

@@ -81,7 +81,7 @@ cd Claude-Command-Suite
 
 ### Step 1: Configure MCP Server (Choose One Method)
 
-#### Method A: Project-Level Configuration (Recommended)
+### Method A: Project-Level Configuration (Recommended)
 
 Create a `.mcp.json` file in your project root. This is the simplest and most portable method:
 
@@ -124,7 +124,7 @@ EOF
 - Can be committed to version control for team consistency
 - No global configuration needed
 
-#### Method B: Global Claude Configuration
+### Method B: Global Claude Configuration
 
 Add the spec-workflow server to your global Claude configuration file:
 
@@ -279,7 +279,7 @@ Status: Ready
 
 ### Common Issues and Solutions
 
-#### 1. MCP Server Not Connecting
+### 1. MCP Server Not Connecting
 
 **Error:** "Cannot connect to spec-workflow MCP server"
 
@@ -289,7 +289,7 @@ Status: Ready
 - Ensure environment variables are set
 - Restart Claude Code after configuration changes
 
-#### 2. Specifications Not Found
+### 2. Specifications Not Found
 
 **Error:** "No specifications found in project"
 
@@ -299,7 +299,7 @@ Status: Ready
 - Ensure file patterns match your spec files
 - Run `find . -name "*.spec.md"` to locate spec files
 
-#### 3. Permission Denied
+### 3. Permission Denied
 
 **Error:** "Permission denied when accessing task files"
 
@@ -308,7 +308,7 @@ Status: Ready
 - Ensure Claude has read/write access
 - Run with appropriate user permissions
 
-#### 4. Sync Issues
+### 4. Sync Issues
 
 **Error:** "Failed to sync with GitHub/Linear"
 
