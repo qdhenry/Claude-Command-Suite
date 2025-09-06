@@ -1,6 +1,6 @@
 # Claude Command Suite
 
-![Total Commands](https://img.shields.io/badge/Total%20Commands-122%20and%20growing!-brightgreen?style=for-the-badge)
+![Total Commands](https://img.shields.io/badge/Total%20Commands-148%20and%20growing!-brightgreen?style=for-the-badge)
 ![AI Agents](https://img.shields.io/badge/AI%20Agents-54%20Intelligent%20Assistants-red?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/qdhenry/Claude-Command-Suite?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)
@@ -8,7 +8,7 @@
 
 > **Inspired by Anthropic's Claude Code Best Practices**: A comprehensive development toolkit designed following [Anthropic's Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) to maximize AI-assisted software development effectiveness.
 
-**Claude Command Suite** is a powerful collection of 122+ custom slash commands, 54 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
+**Claude Command Suite** is a powerful collection of 148+ custom slash commands, 54 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
 
 - **🚀 Slash Commands**: Organized namespace commands like `/dev:code-review`, `/test:generate-test-cases`, and `/deploy:prepare-release` for consistent, thorough development workflows
 - **🤖 AI Agents**: Specialized assistants that proactively handle complex tasks like security auditing, test coverage optimization, and cross-platform issue synchronization
@@ -86,7 +86,7 @@ claude code
 <a id="available-commands"></a>
 ## Available Commands
 
-🚀 **122+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
+🚀 **148+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
 
 🤖 **NEW: 54 Intelligent AI Agents** - Transform commands into proactive assistants! [Learn more about AI Agents](.claude/agents/README.md)
 
@@ -96,7 +96,7 @@ claude code
 |:--------------------:|:--------------------:|:--------------:|:----------------:|:------------:|
 | [🚀 Project](#-project---project-management) | [🧪 Test](#-test---testing-suite) | [📦 Deploy](#-deploy---deployment--release) | [👥 Team](#-team---team-collaboration) | [🎯 Simulation](#-simulation---ai-reality-simulators) |
 | [💻 Dev](#-dev---development-tools) | [🔒 Security](#-security---security--compliance) | [📚 Docs](#-docs---documentation-generation) | [🔄 Sync](#-sync---integration--synchronization) | [📋 Orchestration](#-orchestration---task-orchestration) |
-| [🔧 Setup](#-setup---configuration--setup) | [⚡ Performance](#-performance---performance-optimization) |  |  |  |
+| [🔧 Setup](#-setup---configuration--setup) | [⚡ Performance](#-performance---performance-optimization) |  |  | [🧠 WFGY](#-wfgy---semantic-reasoning--memory) |
 
 <a id="command-namespaces"></a>
 ## Command Namespaces
@@ -272,6 +272,47 @@ Intelligent task management and execution system that transforms complex project
 - [`/orchestration:remove`](.claude/commands/orchestration/remove.md) - Remove or archive completed tasks
 
 **📚 [Task Orchestration Guide](.claude/commands/orchestration/ORCHESTRATION-README.md)** - Complete guide with examples, workflows, and best practices for managing complex development projects.
+
+### 🧠 `/wfgy:*` - Semantic Reasoning & Memory
+**NEW!** Revolutionary semantic reasoning system based on the [WFGY project](https://github.com/onestardao/WFGY) that brings mathematical validation, persistent memory, and hallucination prevention to AI reasoning. Transform Claude Code into a system with genuine long-term memory and reasoning validation.
+
+**Core Formula Commands** (`/wfgy:*`):
+- [`/wfgy:init`](.claude/commands/wfgy/wfgy-init.md) - Initialize WFGY semantic reasoning system
+- [`/wfgy:bbmc`](.claude/commands/wfgy/wfgy-bbmc.md) - Apply semantic residue minimization
+- [`/wfgy:bbpf`](.claude/commands/wfgy/wfgy-bbpf.md) - Execute multi-path progression
+- [`/wfgy:bbcr`](.claude/commands/wfgy/wfgy-bbcr.md) - Trigger collapse-rebirth correction
+- [`/wfgy:bbam`](.claude/commands/wfgy/wfgy-bbam.md) - Apply attention modulation
+- [`/wfgy:formula-all`](.claude/commands/wfgy/wfgy-formula-all.md) - Apply all formulas in sequence
+
+**Semantic Memory** (`/semantic:*`):
+- [`/semantic:tree-init`](.claude/commands/semantic/semantic-tree-init.md) - Create new semantic memory tree
+- [`/semantic:node-build`](.claude/commands/semantic/semantic-node-build.md) - Record semantic nodes
+- [`/semantic:tree-view`](.claude/commands/semantic/semantic-tree-view.md) - Display tree structure
+- [`/semantic:tree-export`](.claude/commands/semantic/semantic-tree-export.md) - Export memory to file
+- [`/semantic:tree-import`](.claude/commands/semantic/semantic-tree-import.md) - Import existing tree
+- [`/semantic:tree-switch`](.claude/commands/semantic/semantic-tree-switch.md) - Switch between trees
+
+**Knowledge Boundaries** (`/boundary:*`):
+- [`/boundary:detect`](.claude/commands/boundary/boundary-detect.md) - Check knowledge limits
+- [`/boundary:heatmap`](.claude/commands/boundary/boundary-heatmap.md) - Visualize risk zones
+- [`/boundary:risk-assess`](.claude/commands/boundary/boundary-risk-assess.md) - Evaluate current risk
+- [`/boundary:bbcr-fallback`](.claude/commands/boundary/boundary-bbcr-fallback.md) - Execute recovery
+- [`/boundary:safe-bridge`](.claude/commands/boundary/boundary-safe-bridge.md) - Find safe connections
+
+**Reasoning Operations** (`/reasoning:*`):
+- [`/reasoning:multi-path`](.claude/commands/reasoning/reasoning-multi-path.md) - Parallel reasoning exploration
+- [`/reasoning:tension-calc`](.claude/commands/reasoning/reasoning-tension-calc.md) - Calculate semantic tension
+- [`/reasoning:logic-vector`](.claude/commands/reasoning/reasoning-logic-vector.md) - Analyze logic flow
+- [`/reasoning:resonance`](.claude/commands/reasoning/reasoning-resonance.md) - Measure stability
+- [`/reasoning:chain-validate`](.claude/commands/reasoning/reasoning-chain-validate.md) - Verify logic chains
+
+**Memory Management** (`/memory:*`):
+- [`/memory:checkpoint`](.claude/commands/memory/memory-checkpoint.md) - Create recovery points
+- [`/memory:recall`](.claude/commands/memory/memory-recall.md) - Search and retrieve memories
+- [`/memory:compress`](.claude/commands/memory/memory-compress.md) - Optimize tree size
+- [`/memory:merge`](.claude/commands/memory/memory-merge.md) - Combine related nodes
+
+**📚 [WFGY Documentation](.claude/commands/wfgy/README.md)** - Mathematical foundations, performance benchmarks, and comprehensive usage guide for semantic reasoning.
 
 
 <a id="how-it-works"></a>

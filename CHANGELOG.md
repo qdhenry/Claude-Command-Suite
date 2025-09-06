@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- **🧠 WFGY Semantic Reasoning System** - Revolutionary AI reasoning and memory system based on the [WFGY project](https://github.com/onestardao/WFGY)
+  - **26 New Commands** across 5 specialized namespaces for semantic reasoning and memory management:
+    - **Core Formula Engine** (`/wfgy:*`): 6 commands implementing mathematical reasoning modules (BBMC, BBPF, BBCR, BBAM)
+    - **Semantic Memory** (`/semantic:*`): 6 commands for persistent memory trees with import/export
+    - **Knowledge Boundaries** (`/boundary:*`): 5 commands for hallucination prevention and risk assessment
+    - **Reasoning Operations** (`/reasoning:*`): 5 commands for logic validation and multi-path exploration
+    - **Memory Management** (`/memory:*`): 4 commands for checkpointing, compression, and recall
+  - **Key Features**:
+    - Mathematical validation of all reasoning steps
+    - Persistent memory that survives across sessions
+    - Proactive hallucination prevention through boundary detection
+    - Semantic tension (ΔS) calculation for conceptual distance
+    - Logic vector (λ) tracking for reasoning patterns
+    - Exportable and shareable knowledge trees
+  - **Performance Improvements** (based on WFGY benchmarks):
+    - Reasoning accuracy: +22.4%
+    - Chain validity: +42.1%
+    - Stability: 3.6× improvement
+    - Significant hallucination reduction
+  - **Comprehensive Documentation**:
+    - Mathematical foundations with formula definitions
+    - Complete usage workflows and examples
+    - Integration patterns between commands
+    - Performance benchmarks and metrics
+
+### Changed
+- **Updated Command Count** to 148 (from 122) with addition of WFGY system
+- **Enhanced README** with new WFGY section and navigation links
+
 ## [3.7.0] - 2025-08-04
 
 ### Added
