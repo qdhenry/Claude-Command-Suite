@@ -1,0 +1,147 @@
+# Wrangler Configuration Template
+# Documentation: https://developers.cloudflare.com/workers/wrangler/configuration/
+#
+# Quick Start:
+# 1. Copy this template: cp templates/wrangler.toml.template wrangler.toml
+# 2. Update name, main, and bindings
+# 3. Deploy: wrangler deploy
+#
+# Note: This skill's scripts can deploy without wrangler.toml, but having
+# this file enables local development with `wrangler dev`
+
+# Worker name (must match deployment name)
+# Rules: lowercase letters, numbers, hyphens only
+name = "my-worker"
+
+# Worker type (javascript or rust)
+# Most workers use "javascript"
+type = "javascript"
+
+# Account ID (optional - auto-detected from API key)
+# Get from: https://dash.cloudflare.com/
+# account_id = "your-account-id-here"
+
+# Compatibility settings
+# Use latest compatibility date for new workers
+# See: https://developers.cloudflare.com/workers/platform/compatibility-dates/
+compatibility_date = "2024-01-01"
+
+# Main entry point
+# Path to your worker script relative to this file
+main = "src/index.js"
+
+# Routes (uncomment and configure as needed)
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]
+
+# Environment variables
+[vars]
+# ENVIRONMENT = "production"
+# API_URL = "https://api.example.com"
+
+# KV Namespace Bindings
+# Bind KV namespaces to your worker
+# 1. Create namespace: bun scripts/kv-storage.ts create-namespace my-cache
+# 2. Copy the namespace ID
+# 3. Uncomment and update the binding below
+#
+# [[kv_namespaces]]
+# binding = "CACHE"           # Variable name in worker code
+# id = "abc123def456"         # Namespace ID from creation step
+
+# [[kv_namespaces]]
+# binding = "SESSIONS"
+# id = "your-kv-namespace-id"
+
+# R2 Bucket Bindings
+# Bind R2 buckets to your worker
+# 1. Create bucket: bun scripts/r2-storage.ts create-bucket my-files
+# 2. Uncomment and update the binding below
+#
+# [[r2_buckets]]
+# binding = "BUCKET"          # Variable name in worker code
+# bucket_name = "my-files"    # Bucket name from creation step
+
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "media-assets"
+
+# Durable Objects Bindings (if using Durable Objects)
+# [[durable_objects.bindings]]
+# name = "COUNTER"
+# class_name = "Counter"
+# script_name = "counter-worker"
+
+# Service Bindings (worker-to-worker communication)
+# [[services]]
+# binding = "AUTH_SERVICE"
+# service = "auth-worker"
+
+# Build configuration
+[build]
+# command = "npm run build"
+# watch_dirs = ["src"]
+
+# Development configuration
+[dev]
+port = 8787
+# local_protocol = "http"
+
+# Environment-specific configurations
+
+# Staging environment
+[env.staging]
+name = "my-worker-staging"
+# routes = [
+#   { pattern = "staging.example.com/*", zone_name = "example.com" }
+# ]
+# vars = { ENVIRONMENT = "staging" }
+
+# Production environment
+[env.production]
+name = "my-worker-production"
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]
+# vars = { ENVIRONMENT = "production" }
+
+# Secrets (NEVER store secrets in this file!)
+# Use wrangler CLI to set secrets securely:
+#
+# wrangler secret put SECRET_NAME
+#
+# Then enter the secret value when prompted
+#
+# Common secret examples:
+# - API_KEY: Third-party API keys
+# - DATABASE_URL: Connection strings
+# - OAUTH_CLIENT_SECRET: OAuth credentials
+# - ENCRYPTION_KEY: Encryption keys
+#
+# Secrets are accessible in worker via environment bindings:
+# const apiKey = env.API_KEY;
+#
+# To list secrets: wrangler secret list
+# To delete secret: wrangler secret delete SECRET_NAME
+
+# Site configuration (for Workers Sites - static file hosting)
+# [site]
+# bucket = "./public"
+# entry-point = "workers-site"
+
+# Triggers (Cron triggers for scheduled workers)
+# [triggers]
+# crons = ["0 0 * * *"]  # Run daily at midnight
+
+# Compatibility flags (advanced)
+# [compatibility_flags]
+# nodejs_compat = true
+
+# Limits (optional - configure resource limits)
+# [limits]
+# cpu_ms = 50  # CPU time limit in milliseconds
+
+# Logpush (send logs to external service)
+# [logpush]
+# enabled = true

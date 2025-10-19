@@ -1,0 +1,23 @@
+{
+  "name": "cloudflare-manager-skill",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cloudflare management skill for Claude Code with Workers, KV, R2, Pages, and DNS support",
+  "scripts": {
+    "validate": "bun scripts/validate-api-key.ts",
+    "deploy-worker": "bun scripts/workers.ts",
+    "kv": "bun scripts/kv-storage.ts",
+    "r2": "bun scripts/r2-storage.ts",
+    "pages": "bun scripts/pages.ts",
+    "dns": "bun scripts/dns-routes.ts"
+  },
+  "dependencies": {
+    "@cloudflare/workers-sdk": "^0.0.1",
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

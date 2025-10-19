@@ -1,52 +1,115 @@
 # Claude Command Suite
 
-![Total Commands](https://img.shields.io/badge/Total%20Commands-148%20and%20growing!-brightgreen?style=for-the-badge)
-![AI Agents](https://img.shields.io/badge/AI%20Agents-54%20Intelligent%20Assistants-red?style=for-the-badge)
+![Total Commands](https://img.shields.io/badge/Commands-148-brightgreen?style=for-the-badge)
+![AI Agents](https://img.shields.io/badge/AI_Agents-54-red?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/qdhenry/Claude-Command-Suite?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)
-<!-- Dynamic badge (will work after PR merge): ![Total Commands](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/qdhenry/Claude-Command-Suite/main/.github/badges/command-count.json&style=for-the-badge) -->
 
-> **Inspired by Anthropic's Claude Code Best Practices**: A comprehensive development toolkit designed following [Anthropic's Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) to maximize AI-assisted software development effectiveness.
+> A comprehensive development toolkit designed following [Anthropic's Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) for AI-assisted software development.
 
-**Claude Command Suite** is a powerful collection of 148+ custom slash commands, 54 intelligent AI agents, and automated workflows that transform Claude Code into your ultimate development partner. From code reviews and test generation to strategic business simulations and automated GitHub-Linear synchronization, this suite provides structured, repeatable workflows for every aspect of modern software development.
+**Claude Command Suite** is a development toolkit providing 148+ slash commands, 54 AI agents, Claude Code Skills, and automated workflows for software engineering tasks. The suite covers code review, testing, deployment, business scenario modeling, and GitHub-Linear synchronization through structured, repeatable workflows.
 
-- **🚀 Slash Commands**: Organized namespace commands like `/dev:code-review`, `/test:generate-test-cases`, and `/deploy:prepare-release` for consistent, thorough development workflows
-- **🤖 AI Agents**: Specialized assistants that proactively handle complex tasks like security auditing, test coverage optimization, and cross-platform issue synchronization
-- **🔄 Automated Workflows**: Pre-built sequences for common development patterns, from feature implementation to production deployment
-- **🎯 Reality Simulators**: Advanced decision-making tools that model business scenarios, system behaviors, and architectural choices across multiple timelines
-- **📋 Task Orchestration**: Intelligent task management system that breaks down complex projects, tracks progress, syncs with Git, and maintains context across sessions
+- **Slash Commands**: Namespace-organized commands (`/dev:code-review`, `/test:generate-test-cases`, `/deploy:prepare-release`) for development workflows
+- **AI Agents**: Specialized agents for security auditing, test coverage analysis, and cross-platform synchronization
+- **Claude Code Skills**: Model-invoked capabilities for recurring workflows including Linear task management and Cloudflare infrastructure deployment
+- **Automated Workflows**: Pre-configured sequences for feature implementation and production deployment
+- **Scenario Simulators**: Decision-making tools for business modeling, system behavior analysis, and architectural evaluation
+- **Task Orchestration**: Task management system with Git integration and context preservation
 
-## 🤖 NEW: Intelligent AI Agents
+## AI Agents
 
 <div align="center">
 
-**Transform your commands into proactive AI assistants!**
-
-[![AI Agents](https://img.shields.io/badge/🤖_AI_Agents-54_Specialized_Assistants-ff6b6b?style=for-the-badge&labelColor=4c1d95)](.claude/agents/README.md)
-[![Workflows](https://img.shields.io/badge/🔄_Workflows-10+_Automated-4ecdc4?style=for-the-badge&labelColor=1a535c)](.claude/agents/WORKFLOW_EXAMPLES.md)
-[![Learn More](https://img.shields.io/badge/📚_Learn_More-Agent_Documentation-ffd93d?style=for-the-badge&labelColor=2d3436)](.claude/agents/README.md)
+[![AI Agents](https://img.shields.io/badge/AI_Agents-54_Available-ff6b6b?style=for-the-badge&labelColor=4c1d95)](.claude/agents/README.md)
+[![Workflows](https://img.shields.io/badge/Workflows-Documentation-4ecdc4?style=for-the-badge&labelColor=1a535c)](.claude/agents/WORKFLOW_EXAMPLES.md)
 
 </div>
 
-**Introducing Claude Command Suite AI Agents** - Specialized AI assistants that transform static commands into intelligent, proactive development partners:
+Specialized AI agents handle complex development tasks through focused tool access and isolated contexts:
 
-- **🛡️ Code Quality Suite**: Automated code review, security scanning, performance analysis
-- **🧪 Test Engineer**: Intelligent test generation with 90%+ coverage targets
-- **🔄 Integration Manager**: Seamless GitHub-Linear synchronization
-- **📊 Strategic Analyst**: Business scenario modeling and decision support
-- **🚀 And More**: Project setup, release management, architecture analysis
+- **Code Quality Suite**: Automated code review, security scanning, performance analysis
+- **Test Engineer**: Test generation with coverage analysis
+- **Integration Manager**: GitHub-Linear bidirectional synchronization
+- **Strategic Analyst**: Business scenario modeling and decision analysis
+- **Additional Agents**: Project initialization, release management, architecture review
 
-[**→ Explore AI Agents Documentation**](.claude/agents/README.md) | [**→ See Workflow Examples**](.claude/agents/WORKFLOW_EXAMPLES.md)
+[AI Agents Documentation](.claude/agents/README.md) | [Workflow Examples](.claude/agents/WORKFLOW_EXAMPLES.md)
+
+---
+
+## Claude Code Skills
+
+<div align="center">
+
+[![Skills Available](https://img.shields.io/badge/Skills-2_Available-9b59b6?style=for-the-badge&labelColor=2c3e50)](.claude/skills/)
+[![Documentation](https://img.shields.io/badge/Documentation-Skills_Guide-3498db?style=for-the-badge&labelColor=2c3e50)](.claude/commands/skills/README.md)
+
+</div>
+
+Claude Code Skills extend the suite with model-invoked capabilities that complement slash commands. Skills are automatically activated by Claude based on context, suitable for recurring workflows and domain-specific expertise.
+
+### Skills vs Commands
+
+| Feature | **Skills** (Model-Invoked) | **Commands** (User-Invoked) |
+|---------|---------------------------|---------------------------|
+| **Activation** | Contextually triggered | Explicit invocation via `/command` |
+| **Use Case** | Recurring workflows, domain expertise | Specific task execution |
+| **Scope** | Personal or project-wide | Project-specific |
+| **Distribution** | Git repositories, plugins | Command file copying |
+
+### Available Skills
+
+**[linear-todo-sync](.claude/skills/linear-todo-sync/)** - Linear task management integration
+
+- GraphQL API integration for task retrieval
+- Priority-based organization with metadata
+- Markdown output with actionable links
+- Context triggers: "What do I need to work on?", "Show my work"
+
+**[cloudflare-manager](.claude/skills/cloudflare-manager/)** - Cloudflare infrastructure management
+
+- Workers deployment with URL extraction
+- KV Storage and R2 bucket management
+- Cloudflare Pages deployment
+- DNS and routing configuration
+- Requirements: Bun runtime, CLOUDFLARE_API_KEY
+
+### Skills Builder Framework
+
+Structured workflow for creating custom skills:
+
+- **[/skills:build-skill](.claude/commands/skills/build-skill.md)** - Guided skill creation command
+- **Four-phase process**: Requirements elicitation, code generation, validation, documentation
+- **Quality assurance**: Automated testing and validation scripts
+- **Templates**: Five skill templates for different use cases
+
+### Usage
+
+**Triggering skills:**
+```
+"What do I need to work on today?"  # Activates linear-todo-sync
+"Deploy a cloudflare worker"        # Activates cloudflare-manager
+```
+
+**Creating skills:**
+```
+/skills:build-skill
+```
+
+**Documentation:**
+- [Quick Start Guide](.claude/commands/skills/QUICKSTART.md) - Skill creation walkthrough
+- [Complete Documentation](.claude/commands/skills/README.md) - Full reference guide
+- [Browse Skills](.claude/skills/) - Available implementations
 
 ---
 
 ## 📚 Table of Contents
 
-| **🤖 AI Agents** | **🚀 Getting Started** | **⚡ Commands** | **💡 Usage** | **🔧 Development** |
-|:----------------:|:---------------------:|:---------------:|:------------:|:------------------:|
-| [AI Agents](#-new-intelligent-ai-agents) | [Quick Start](#quick-start) | [Available Commands](#available-commands) | [How It Works](#how-it-works) | [Contributing](#contributing) |
-| [Agent Docs](.claude/agents/README.md) | [Installation Guide](docs/INSTALLATION.md) | [Command Namespaces](#command-namespaces) | [Common Workflows](#common-workflows) | [Release Process](#release-process) |
-| [Workflows](.claude/agents/WORKFLOW_EXAMPLES.md) |  |  |  | [Automated Changelog](#automated-changelog) |
+| **🤖 AI Agents** | **🎨 Skills** | **🚀 Getting Started** | **⚡ Commands** | **💡 Usage** |
+|:----------------:|:-------------:|:---------------------:|:---------------:|:------------:|
+| [AI Agents](#-new-intelligent-ai-agents) | [Skills](#-new-claude-code-skills) | [Quick Start](#quick-start) | [Available Commands](#available-commands) | [How It Works](#how-it-works) |
+| [Agent Docs](.claude/agents/README.md) | [Skills Quickstart](.claude/commands/skills/QUICKSTART.md) | [Installation Guide](docs/INSTALLATION.md) | [Command Namespaces](#command-namespaces) | [Common Workflows](#common-workflows) |
+| [Workflows](.claude/agents/WORKFLOW_EXAMPLES.md) | [Skills Docs](.claude/commands/skills/README.md) |  |  | [Contributing](#contributing) |
 
 <a id="quick-start"></a>
 ## Quick Start
@@ -86,11 +149,11 @@ claude code
 <a id="available-commands"></a>
 ## Available Commands
 
-🚀 **148+ Commands Organized by Namespace** - Discover the right tool for any task with our namespace organization.
+148 commands organized by namespace for software development workflows.
 
-🤖 **NEW: 54 Intelligent AI Agents** - Transform commands into proactive assistants! [Learn more about AI Agents](.claude/agents/README.md)
+54 AI agents available for complex task automation. [AI Agents Documentation](.claude/agents/README.md)
 
-### 🎯 Quick Navigation to Command Namespaces
+### Command Namespace Index
 
 | **Core Development** | **Quality & Testing** | **Deployment** | **Collaboration** | **Advanced** |
 |:--------------------:|:--------------------:|:--------------:|:----------------:|:------------:|
@@ -101,8 +164,8 @@ claude code
 <a id="command-namespaces"></a>
 ## Command Namespaces
 
-### 🚀 `/project:*` - Project Management
-Initialize, configure, and manage projects. Includes commands for creating new projects, adding packages, tracking milestones, and monitoring project health.
+### `/project:*` - Project Management
+Project initialization, configuration, and management. Commands for project creation, dependency management, milestone tracking, and health monitoring.
 
 - [`/project:init-project`](.claude/commands/project/init-project.md) - Initialize new project with essential structure
 - [`/project:add-package`](.claude/commands/project/add-package.md) - Add and configure new project dependencies  
@@ -117,8 +180,8 @@ Initialize, configure, and manage projects. Includes commands for creating new p
 - [`/project:pac-validate`](.claude/commands/project/pac-validate.md) - Validate PAC structure for specification compliance
 - [`/project:pac-update-status`](.claude/commands/project/pac-update-status.md) - Update PAC ticket status and track progress
 
-### 💻 `/dev:*` - Development Tools
-Essential development utilities including code review, debugging, refactoring, and specialized AI modes for enhanced assistance.
+### `/dev:*` - Development Tools
+Development utilities including code review, debugging, refactoring, and analysis modes.
 
 - [`/dev:code-review`](.claude/commands/dev/code-review.md) - Comprehensive code quality review
 - [`/dev:debug-error`](.claude/commands/dev/debug-error.md) - Systematically debug and fix errors
@@ -135,8 +198,8 @@ Essential development utilities including code review, debugging, refactoring, a
 - [`/dev:code-permutation-tester`](.claude/commands/dev/code-permutation-tester.md) - Test multiple code variations through simulation
 - [`/dev:architecture-scenario-explorer`](.claude/commands/dev/architecture-scenario-explorer.md) - Explore architectural decisions through scenario analysis
 
-### 🧪 `/test:*` - Testing Suite
-Comprehensive testing tools covering unit tests, integration tests, E2E tests, coverage analysis, mutation testing, and visual regression testing.
+### `/test:*` - Testing Suite
+Testing tools for unit tests, integration tests, E2E tests, coverage analysis, mutation testing, and visual regression testing.
 
 - [`/test:generate-test-cases`](.claude/commands/test/generate-test-cases.md) - Generate comprehensive test cases automatically
 - [`/test:write-tests`](.claude/commands/test/write-tests.md) - Write unit and integration tests
@@ -149,16 +212,16 @@ Comprehensive testing tools covering unit tests, integration tests, E2E tests, c
 - [`/test:add-property-based-testing`](.claude/commands/test/add-property-based-testing.md) - Implement property-based testing framework
 - [`/test:test-changelog-automation`](.claude/commands/test/test-changelog-automation.md) - Automate changelog testing workflow
 
-### 🔒 `/security:*` - Security & Compliance
-Security auditing, dependency scanning, authentication implementation, and security hardening tools to keep your codebase secure.
+### `/security:*` - Security & Compliance
+Security auditing, dependency scanning, authentication implementation, and security hardening for codebase security.
 
 - [`/security:security-audit`](.claude/commands/security/security-audit.md) - Perform comprehensive security assessment
 - [`/security:dependency-audit`](.claude/commands/security/dependency-audit.md) - Audit dependencies for security vulnerabilities
 - [`/security:security-hardening`](.claude/commands/security/security-hardening.md) - Harden application security configuration
 - [`/security:add-authentication-system`](.claude/commands/security/add-authentication-system.md) - Implement secure user authentication system
 
-### ⚡ `/performance:*` - Performance Optimization
-Tools for optimizing build times, bundle sizes, database queries, caching strategies, and overall application performance.
+### `/performance:*` - Performance Optimization
+Tools for optimizing build times, bundle sizes, database queries, caching strategies, and application performance.
 
 - [`/performance:performance-audit`](.claude/commands/performance/performance-audit.md) - Audit application performance metrics
 - [`/performance:optimize-build`](.claude/commands/performance/optimize-build.md) - Optimize build processes and speed
@@ -169,8 +232,8 @@ Tools for optimizing build times, bundle sizes, database queries, caching strate
 - [`/performance:setup-cdn-optimization`](.claude/commands/performance/setup-cdn-optimization.md) - Configure CDN for optimal delivery
 - [`/performance:system-behavior-simulator`](.claude/commands/performance/system-behavior-simulator.md) - Simulate system performance under various loads
 
-### 🔄 `/sync:*` - Integration & Synchronization
-Bidirectional sync between GitHub Issues and Linear, PR tracking, conflict resolution, and cross-platform task management.
+### `/sync:*` - Integration & Synchronization
+Bidirectional synchronization between GitHub Issues and Linear, PR tracking, conflict resolution, and cross-platform task management.
 
 - [`/sync:sync-issues-to-linear`](.claude/commands/sync/sync-issues-to-linear.md) - Sync GitHub issues to Linear workspace
 - [`/sync:sync-linear-to-issues`](.claude/commands/sync/sync-linear-to-issues.md) - Sync Linear tasks to GitHub issues
@@ -185,7 +248,7 @@ Bidirectional sync between GitHub Issues and Linear, PR tracking, conflict resol
 - [`/sync:sync-conflict-resolver`](.claude/commands/sync/sync-conflict-resolver.md) - Resolve synchronization conflicts automatically
 - [`/sync:task-from-pr`](.claude/commands/sync/task-from-pr.md) - Create Linear tasks from pull requests
 
-### 📦 `/deploy:*` - Deployment & Release
+### `/deploy:*` - Deployment & Release
 Release preparation, automated deployments, rollback capabilities, containerization, and Kubernetes deployment management.
 
 - [`/deploy:prepare-release`](.claude/commands/deploy/prepare-release.md) - Prepare and validate release packages
@@ -198,8 +261,8 @@ Release preparation, automated deployments, rollback capabilities, containerizat
 - [`/deploy:add-changelog`](.claude/commands/deploy/add-changelog.md) - Generate and maintain project changelog
 - [`/deploy:changelog-demo-command`](.claude/commands/deploy/changelog-demo-command.md) - Demo changelog automation features
 
-### 📚 `/docs:*` - Documentation Generation
-Automated documentation tools for APIs, architecture diagrams, onboarding guides, and troubleshooting documentation.
+### `/docs:*` - Documentation Generation
+Documentation automation for APIs, architecture diagrams, onboarding guides, and troubleshooting documentation.
 
 - [`/docs:generate-api-documentation`](.claude/commands/docs/generate-api-documentation.md) - Auto-generate API reference documentation
 - [`/docs:doc-api`](.claude/commands/docs/doc-api.md) - Generate API documentation from code
@@ -208,8 +271,8 @@ Automated documentation tools for APIs, architecture diagrams, onboarding guides
 - [`/docs:migration-guide`](.claude/commands/docs/migration-guide.md) - Create migration guides for updates
 - [`/docs:troubleshooting-guide`](.claude/commands/docs/troubleshooting-guide.md) - Generate troubleshooting documentation
 
-### 🔧 `/setup:*` - Configuration & Setup
-Initial setup commands for development environments, linting, formatting, monitoring, database schemas, and API design.
+### `/setup:*` - Configuration & Setup
+Setup commands for development environments, linting, formatting, monitoring, database schemas, and API design.
 
 - [`/setup:setup-development-environment`](.claude/commands/setup/setup-development-environment.md) - Setup complete development environment
 - [`/setup:setup-linting`](.claude/commands/setup/setup-linting.md) - Setup code linting and quality tools
@@ -224,8 +287,8 @@ Initial setup commands for development environments, linting, formatting, monito
 - [`/setup:implement-graphql-api`](.claude/commands/setup/implement-graphql-api.md) - Implement GraphQL API endpoints
 - [`/setup:setup-rate-limiting`](.claude/commands/setup/setup-rate-limiting.md) - Implement API rate limiting
 
-### 👥 `/team:*` - Team Collaboration
-Team workflow tools including standup reports, sprint planning, retrospectives, workload balancing, and knowledge capture.
+### `/team:*` - Team Collaboration
+Team workflow tools including standup reports, sprint planning, retrospectives, workload balancing, and knowledge management.
 
 - [`/team:standup-report`](.claude/commands/team/standup-report.md) - Generate daily standup reports
 - [`/team:sprint-planning`](.claude/commands/team/sprint-planning.md) - Plan and organize sprint workflows
@@ -240,10 +303,10 @@ Team workflow tools including standup reports, sprint planning, retrospectives, 
 - [`/team:migration-assistant`](.claude/commands/team/migration-assistant.md) - Assist with system migration planning
 - [`/team:decision-quality-analyzer`](.claude/commands/team/decision-quality-analyzer.md) - Analyze decision quality with scenario testing
 
-### 🎯 `/simulation:*` - AI Reality Simulators
+### `/simulation:*` - Scenario Simulators
 *Inspired by "AI agents at their most under-leveraged point" by AI News & Strategy Daily | Nate B. Jones*
 
-Advanced simulation and modeling tools for exponential decision value. Transform from linear execution gains to exponential strategic advantage through systematic scenario exploration, digital twins, and timeline compression.
+Simulation and modeling tools for decision analysis through scenario exploration, digital twins, and timeline compression.
 
 - [`/simulation:business-scenario-explorer`](.claude/commands/simulation/business-scenario-explorer.md) - Multi-timeline business exploration with constraint validation
 - [`/simulation:digital-twin-creator`](.claude/commands/simulation/digital-twin-creator.md) - Systematic digital twin creation with data quality checks
@@ -258,8 +321,8 @@ Advanced simulation and modeling tools for exponential decision value. Transform
 
 *Development tools `/dev:prime`, `/dev:all-tools` contributed by IndyDevDan (YouTube: https://www.youtube.com/@indydevdan) / DislerH (GitHub: https://github.com/disler)*
 
-### 📋 `/orchestration:*` - Task Orchestration
-Intelligent task management and execution system that transforms complex projects into organized, trackable workflows. Break down big ideas into manageable tasks, track progress across sessions, sync with Git, and maintain context even after breaks.
+### `/orchestration:*` - Task Orchestration
+Task management and execution system for organizing complex projects into trackable workflows. Task decomposition, progress tracking, Git synchronization, and context preservation.
 
 - [`/orchestration:start`](.claude/commands/orchestration/start.md) - Begin a new project with intelligent task decomposition
 - [`/orchestration:status`](.claude/commands/orchestration/status.md) - Check progress and see what's happening across all projects
@@ -273,8 +336,8 @@ Intelligent task management and execution system that transforms complex project
 
 **📚 [Task Orchestration Guide](.claude/commands/orchestration/ORCHESTRATION-README.md)** - Complete guide with examples, workflows, and best practices for managing complex development projects.
 
-### 🧠 `/wfgy:*` - Semantic Reasoning & Memory
-**NEW!** Revolutionary semantic reasoning system based on the [WFGY project](https://github.com/onestardao/WFGY) that brings mathematical validation, persistent memory, and hallucination prevention to AI reasoning. Transform Claude Code into a system with genuine long-term memory and reasoning validation.
+### `/wfgy:*` - Semantic Reasoning & Memory
+Semantic reasoning system based on the [WFGY project](https://github.com/onestardao/WFGY) providing mathematical validation, persistent memory, and hallucination prevention.
 
 **Core Formula Commands** (`/wfgy:*`):
 - [`/wfgy:init`](.claude/commands/wfgy/wfgy-init.md) - Initialize WFGY semantic reasoning system
@@ -318,7 +381,7 @@ Intelligent task management and execution system that transforms complex project
 <a id="how-it-works"></a>
 ## How It Works
 
-Claude Code automatically recognizes any markdown file in your project's `.claude/commands/` directory as a slash command. No installation or setup required - just add the file and start using it!
+Claude Code automatically recognizes markdown files in `.claude/commands/` as slash commands. Files are loaded on startup and available immediately.
 
 ### Command Structure
 Each command file needs:
@@ -346,13 +409,13 @@ Performs a specific task in my project.
 Use it immediately with: `/namespace:my-command`
 
 ### Using Commands
-Commands are available as `/namespace:command-name` in Claude Code. Each command follows a structured workflow that Claude executes automatically, ensuring consistent and thorough results across different projects.
+Commands use the format `/namespace:command-name`. Each command executes a structured workflow defined in its markdown file.
 
-**Example workflows:**
-- `/dev:code-review` analyzes your entire codebase for quality, security, and performance
-- `/project:create-feature dashboard` plans, implements, and tests a new dashboard feature
-- `/dev:fix-issue 123` systematically resolves GitHub issue #123 with testing
-- `/simulation:business-scenario-explorer Evaluate market expansion into Europe` models multiple business timelines and outcomes
+**Examples:**
+- `/dev:code-review` - Analyze codebase for quality, security, and performance
+- `/project:create-feature dashboard` - Plan, implement, and test a new feature
+- `/dev:fix-issue 123` - Resolve GitHub issue with systematic approach
+- `/simulation:business-scenario-explorer Evaluate market expansion` - Model business scenarios
 
 <a id="common-workflows"></a>
 ## Common Workflows
@@ -393,87 +456,86 @@ Commands are available as `/namespace:command-name` in Claude Code. Each command
 ```
 
 <a id="need-more-details"></a>
-## Need More Details?
+## Additional Documentation
 
-- **[Installation Guide](docs/INSTALLATION.md)** - Detailed installation methods, troubleshooting, and configuration
-- **[Customization Guide](docs/CUSTOMIZATION.md)** - How to modify commands and create new ones
+- **[Installation Guide](docs/INSTALLATION.md)** - Installation methods, troubleshooting, and configuration
+- **[Customization Guide](docs/CUSTOMIZATION.md)** - Command modification and creation
 - **[Development Guide](docs/DEVELOPMENT.md)** - Contributing, testing, and best practices
 
 <a id="contributing"></a>
 ## Contributing
 
-This repository exists to collect and share useful slash commands for Claude Code. **Contributions are welcome!**
+This repository accepts contributions for slash commands, AI agents, and skills.
 
-### Ways to Contribute
+### Contribution Areas
 
-- **Share new commands** - Create commands for workflows you find useful
-- **Improve existing commands** - Enhance commands with better practices
-- **Add language-specific variants** - Adapt commands for specific tech stacks
-- **Fix bugs** - Resolve issues with existing commands
-- **Improve documentation** - Make guides clearer and more helpful
+- **Commands** - New workflow commands or enhancements to existing ones
+- **AI Agents** - Specialized agents for development tasks
+- **Skills** - Model-invoked capabilities for recurring workflows
+- **Documentation** - Improvements to guides and examples
+- **Bug Fixes** - Issues with existing functionality
 
-### Quick Contribution
+### Contribution Process
 
-1. Fork this repository
-2. Add or modify commands in `.claude/commands/`
-3. Test your changes thoroughly
-4. Submit a pull request with a clear description
+1. Fork the repository
+2. Add or modify content in appropriate directories
+3. Test changes according to guidelines
+4. Submit pull request with clear description
 
-See **[Development Guide](docs/DEVELOPMENT.md)** for detailed contribution guidelines, testing practices, and quality standards.
+See [Development Guide](docs/DEVELOPMENT.md) for contribution guidelines, testing requirements, and quality standards.
 
 <a id="automated-changelog"></a>
 ## Automated Changelog
 
-This project features automated changelog generation to track command additions and updates:
+Changelog generation is automated through GitHub Actions and manual scripts.
 
-### 🤖 **Automatic Updates**
-- **GitHub Actions Integration**: Automatically detects when new commands are added
-- **Smart Detection**: Tracks both new command files and modifications to existing ones
-- **Formatted Entries**: Generates properly formatted changelog entries with command descriptions
-- **PR Comments**: Provides summary comments on pull requests with changelog updates
+### Automatic Updates
+- GitHub Actions integration detects command additions
+- Tracks new files and modifications
+- Generates formatted changelog entries
+- Adds summary comments to pull requests
 
-### 📝 **Manual Updates**
-For manual changelog updates, use the provided script:
+### Manual Updates
+Run the update script for manual changelog generation:
 ```bash
 ./scripts/update-changelog.sh
 ```
 
-This script will:
-- Scan all command files in `.claude/commands/`
-- Extract command names and descriptions
-- Update `CHANGELOG.md` with categorized command listings
-- Create a backup of the existing changelog
+The script performs the following operations:
+- Scans command files in `.claude/commands/`
+- Extracts command names and descriptions
+- Updates `CHANGELOG.md` with categorized listings
+- Creates backup of existing changelog
 
-### 📊 **Changelog Features**
-- **Command Categorization**: Automatically groups commands by type (Analysis, Development, Testing, etc.)
-- **Total Count Tracking**: Maintains accurate count of total available commands  
-- **Description Extraction**: Pulls descriptions directly from command files
-- **Backup Safety**: Creates backups before making changes
+### Features
+- Command categorization by type
+- Total count tracking
+- Description extraction from source files
+- Backup creation before modifications
 
 <a id="release-process"></a>
 ## Release Process
 
-This project uses automated releases powered by [Conventional Commits](https://www.conventionalcommits.org/). Every merge to the main branch triggers our release workflow which:
+Automated releases use [Conventional Commits](https://www.conventionalcommits.org/). Merges to main trigger the release workflow:
 
-1. **Analyzes commits** to determine version bump type
-2. **Updates version** automatically based on commit types
-3. **Generates release notes** from commit messages
-4. **Creates GitHub releases** with downloadable bundles
-5. **Updates changelog** with categorized changes
+1. Commit analysis determines version bump type
+2. Version updates based on commit types
+3. Release notes generated from commit messages
+4. GitHub releases created with downloadable bundles
+5. Changelog updated with categorized changes
 
-### Version Bumping Rules
+### Version Bumping
 
 - `fix:` commits → Patch release (1.0.0 → 1.0.1)
-- `feat:` commits → Minor release (1.0.0 → 1.1.0)  
+- `feat:` commits → Minor release (1.0.0 → 1.1.0)
 - Breaking changes → Major release (1.0.0 → 2.0.0)
 
-### Making Releases
+### Release Triggers
 
-Releases happen automatically when you:
-1. Merge PRs with conventional commit titles
-2. Push directly to main with conventional commits
+- Pull request merges with conventional commit titles
+- Direct pushes to main with conventional commits
 
-For details on contributing and commit formats, see [CONTRIBUTING.md](CONTRIBUTING.md).
+For commit format details, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 <a id="requirements"></a>
 ## Requirements

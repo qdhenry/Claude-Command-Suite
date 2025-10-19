@@ -4,35 +4,128 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [4.0.0] - 2025-10-19
+
+### Claude Code Skills
+
+Introduction of Claude Code Skills - model-invoked capabilities that complement slash commands for recurring workflows and domain expertise.
+
+#### Overview
+
+Skills are contextually triggered by Claude, while slash commands require explicit invocation. Skills are suitable for recurring workflows, domain expertise, and reusable automation.
+
+| Feature | **Skills** (Model-Invoked) | **Commands** (User-Invoked) |
+|---------|---------------------------|---------------------------|
+| **Activation** | Claude decides automatically | You type `/command` |
+| **Use Case** | Recurring workflows, expertise | Specific one-time tasks |
+| **Scope** | Personal or project-wide | Project-specific |
+| **Distribution** | Share via git or plugins | Copy command files |
+
+#### Skills Added
+
+- **[linear-todo-sync](.claude/skills/linear-todo-sync/)** - Linear task management integration
+  - GraphQL API integration for task retrieval
+  - Priority-based organization with metadata
+  - Markdown output with actionable links
+  - Error handling and rate limit awareness
+  - Documentation with examples and troubleshooting
+  - Triggers: "What do I need to work on?", "Show me my work", "Load Linear tasks"
+
+- **[cloudflare-manager](.claude/skills/cloudflare-manager/)** - Cloudflare infrastructure management
+  - Workers deployment with URL extraction
+  - KV Storage namespace management with CRUD operations
+  - R2 bucket management with file operations
+  - Cloudflare Pages deployment with environment configuration
+  - DNS record and worker route configuration
+  - API credential validation with permission verification
+  - Retry logic with exponential backoff
+  - Error handling with actionable messages
+  - Triggers: "Deploy cloudflare worker", "Configure KV storage", "Setup R2 bucket"
+  - Requirements: Bun runtime, CLOUDFLARE_API_KEY in .env
+
+#### Skills Builder Framework
+
+Structured workflow for creating custom skills:
+
+- **[/skills:build-skill](.claude/commands/skills/build-skill.md)** - Skill creation command
+  - Four-phase process: Elicitation → Generation → Validation → Documentation
+  - Requirements gathering workflow
+  - Automated file generation
+  - Quality assurance and testing
+  - Documentation generation
+
+- **Four Specialized Agents**:
+  - skill-elicitation-agent - Requirements gathering and specifications
+  - skill-generator-agent - File creation and directory structure setup
+  - skill-validator-agent - Quality assurance and testing
+  - skill-documenter-agent - Documentation and examples
+
+- **Five Skill Templates**:
+  - Simple template - Single SKILL.md file
+  - Multi-file template - Complex workflows with reference documentation
+  - Tool-restricted template - Read-only operations
+  - Code-execution template - Bundled scripts
+  - Enhanced templates - Production-ready variations
+
+- **Validation & Testing**:
+  - YAML frontmatter validation
+  - Structure verification
+  - Script execution testing
+  - Trigger phrase validation
+  - Quality scoring system
+
+- **Documentation**:
+  - [Skills README](.claude/commands/skills/README.md) - Complete reference
+  - [Quick Start Guide](.claude/commands/skills/QUICKSTART.md) - Creation walkthrough
+  - Template documentation
+  - Best practices
+
+#### Features
+
+- Progressive disclosure for complex workflows
+- Tool restrictions for safety-critical operations
+- Script bundling for deterministic operations
+- Personal and project scope support (`~/.claude/skills/` or `.claude/skills/`)
+- Plugin distribution capability
+- Version control integration
+
+#### Usage Patterns
+
+Skills and commands serve different purposes:
+
+**Skills** - Recurring workflows, domain expertise, automatic triggering, reusable automation
+
+**Commands** - Specific tasks, explicit control, project-specific workflows, structured execution
+
 ### Added
-- **🧠 WFGY Semantic Reasoning System** - Revolutionary AI reasoning and memory system based on the [WFGY project](https://github.com/onestardao/WFGY)
-  - **26 New Commands** across 5 specialized namespaces for semantic reasoning and memory management:
+- **WFGY Semantic Reasoning System** - Semantic reasoning and memory system based on the [WFGY project](https://github.com/onestardao/WFGY)
+  - 26 commands across 5 namespaces for semantic reasoning and memory management:
     - **Core Formula Engine** (`/wfgy:*`): 6 commands implementing mathematical reasoning modules (BBMC, BBPF, BBCR, BBAM)
     - **Semantic Memory** (`/semantic:*`): 6 commands for persistent memory trees with import/export
     - **Knowledge Boundaries** (`/boundary:*`): 5 commands for hallucination prevention and risk assessment
     - **Reasoning Operations** (`/reasoning:*`): 5 commands for logic validation and multi-path exploration
     - **Memory Management** (`/memory:*`): 4 commands for checkpointing, compression, and recall
-  - **Key Features**:
-    - Mathematical validation of all reasoning steps
-    - Persistent memory that survives across sessions
-    - Proactive hallucination prevention through boundary detection
-    - Semantic tension (ΔS) calculation for conceptual distance
-    - Logic vector (λ) tracking for reasoning patterns
-    - Exportable and shareable knowledge trees
-  - **Performance Improvements** (based on WFGY benchmarks):
+  - Features:
+    - Mathematical validation of reasoning steps
+    - Persistent memory across sessions
+    - Hallucination prevention through boundary detection
+    - Semantic tension (ΔS) calculation
+    - Logic vector (λ) tracking
+    - Exportable knowledge trees
+  - Performance improvements (WFGY benchmarks):
     - Reasoning accuracy: +22.4%
     - Chain validity: +42.1%
     - Stability: 3.6× improvement
-    - Significant hallucination reduction
-  - **Comprehensive Documentation**:
-    - Mathematical foundations with formula definitions
-    - Complete usage workflows and examples
-    - Integration patterns between commands
-    - Performance benchmarks and metrics
+    - Hallucination reduction
+  - Documentation:
+    - Mathematical foundations
+    - Usage workflows and examples
+    - Command integration patterns
+    - Performance benchmarks
 
 ### Changed
-- **Updated Command Count** to 148 (from 122) with addition of WFGY system
-- **Enhanced README** with new WFGY section and navigation links
+- Command count updated to 148 (from 122) with WFGY system addition
+- README updated with WFGY section and navigation links
 
 ## [3.7.0] - 2025-08-04
 
