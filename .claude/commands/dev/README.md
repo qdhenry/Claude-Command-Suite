@@ -6,6 +6,7 @@ This namespace contains commands for daily development tasks, code analysis, and
 
 - **all-tools.md** - Access comprehensive development tools and utilities in one place
 - **clean-branches.md** - Clean up local and remote Git branches that are no longer needed
+- **cloudflare-worker.md** - Generate production-ready Cloudflare Workers code with best practices, TypeScript, and service integrations
 - **code-review.md** - Perform comprehensive code reviews analyzing quality and best practices
 - **code-to-task.md** - Convert code changes or features into actionable tasks
 - **debug-error.md** - Debug errors with detailed analysis and solution suggestions
