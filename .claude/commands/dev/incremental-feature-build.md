@@ -8,6 +8,9 @@ Build a feature incrementally using the structured approach for: **$ARGUMENTS**
 
 This command implements best practices for long-running agent tasks, preventing the tendency to one-shot applications or prematurely consider projects complete.
 
+> **Note:** `$ARGUMENTS` is automatically replaced with the text following the command invocation.
+> Example: `/dev:incremental-feature-build user authentication system` sets `$ARGUMENTS` to "user authentication system"
+
 ---
 
 ## Phase 1: Feature Requirements Expansion
@@ -15,8 +18,14 @@ This command implements best practices for long-running agent tasks, preventing 
 ### 1.1 Create Feature Tracking Directory
 
 ```bash
-mkdir -p .feature-tracking
+# Create tracking directory with error handling
+mkdir -p .feature-tracking || { echo "ERROR: Cannot create .feature-tracking directory. Check permissions."; exit 1; }
 ```
+
+If directory creation fails, verify:
+- You have write permissions in the current directory
+- Sufficient disk space is available
+- No file named `.feature-tracking` already exists
 
 ### 1.2 Generate Comprehensive Feature List
 
@@ -60,6 +69,10 @@ Each feature MUST follow this exact JSON schema:
 }
 ```
 
+> **Note:** This command uses a simple boolean `passes` field since features are implemented sequentially.
+> The parallel command (`/dev:parallel-feature-build`) uses a multi-state `status` field to track
+> concurrent work: `pending`, `in_progress`, `passed`, `blocked`.
+
 ### 1.4 Feature Categories
 
 Generate features across ALL relevant categories:
@@ -77,11 +90,27 @@ Generate features across ALL relevant categories:
 
 When expanding the user's request:
 
-1. **Be Exhaustive**: Aim for 50-200+ features for complex projects
+1. **Use Hierarchical Organization**: Group features into epics/modules for manageability
+   - Small projects: 10-30 features
+   - Medium projects: 30-60 features
+   - Large projects: 60-100 features (consider using `/dev:parallel-feature-build` instead)
 2. **Be Specific**: Each feature should be independently verifiable
 3. **Include Edge Cases**: Error states, empty states, boundary conditions
 4. **Cover All Paths**: Happy path AND unhappy paths
 5. **Think Like a User**: What would they expect at each step?
+
+**Feature Grouping Example:**
+```json
+{
+  "epics": [
+    {
+      "id": "EPIC-01",
+      "name": "User Authentication",
+      "features": ["FEAT-001", "FEAT-002", "FEAT-003"]
+    }
+  ]
+}
+```
 
 ---
 
@@ -245,7 +274,7 @@ If a feature cannot be implemented correctly:
 
 1. **DO NOT** mark it as passing
 2. **DO NOT** remove the feature
-3. **DO** use git to revert: `git checkout -- [files]`
+3. **DO** use git to revert changes: `git restore [files]`
 4. **DO** document the blocker in PROGRESS.md
 5. **DO** move to the next non-blocked feature
 
@@ -257,7 +286,7 @@ If implementing a feature breaks existing functionality:
 2. Run `git stash` to save work
 3. Verify baseline still works
 4. Run `git stash pop` and fix carefully
-5. Or `git checkout -- .` to fully reset
+5. Or `git restore .` to fully reset working directory
 
 ### 4.3 Revert Bad Commits
 
@@ -277,11 +306,15 @@ git revert [hash]      # Create revert commit
 Before declaring the project complete:
 
 ```bash
-# Generate completion report
-cat .feature-tracking/features.json | grep '"passes": false'
+# Generate completion report - count remaining incomplete features
+cat .feature-tracking/features.json | jq '[.features[] | select(.passes == false)] | length'
+# Must return 0
+
+# Or list any incomplete features for review
+cat .feature-tracking/features.json | jq '.features[] | select(.passes == false) | {id, description}'
 ```
 
-**Must return empty** - all features must pass.
+**Must return 0** - all features must pass.
 
 ### 5.2 Summary Generation
 

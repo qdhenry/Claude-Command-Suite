@@ -8,6 +8,9 @@ Build features in parallel using agent orchestration for: **$ARGUMENTS**
 
 This command extends the incremental approach with parallel execution capabilities, launching multiple agents to work on independent features simultaneously while maintaining strict tracking and clean merge protocols.
 
+> **Note:** `$ARGUMENTS` is automatically replaced with the text following the command invocation.
+> Example: `/dev:parallel-feature-build e-commerce checkout` sets `$ARGUMENTS` to "e-commerce checkout"
+
 ---
 
 ## Phase 1: Feature Requirements & Dependency Analysis
@@ -15,8 +18,13 @@ This command extends the incremental approach with parallel execution capabiliti
 ### 1.1 Create Feature Tracking Directory
 
 ```bash
-mkdir -p .feature-tracking/{agents,batches,merges}
+# Create tracking directories with error handling
+mkdir -p .feature-tracking/{agents,batches,merges} || { echo "ERROR: Cannot create directories. Check permissions."; exit 1; }
 ```
+
+If directory creation fails, verify:
+- You have write permissions in the current directory
+- Sufficient disk space is available
 
 ### 1.2 Generate Comprehensive Feature List
 
@@ -103,6 +111,33 @@ Same as incremental approach - expand user request into granular features.
 3. **Multiple Dependencies**: Waits for ALL dependencies
 4. **Circular Detection**: FAIL if cycles found - must restructure
 
+#### Circular Dependency Detection
+
+Before proceeding, verify no cycles exist in the dependency graph:
+
+```bash
+# Using jq to detect cycles (simplified check)
+# This finds features that depend on features that depend back on them
+cat .feature-tracking/features.json | jq '
+  .features as $all |
+  [.features[] |
+    select(.dependencies[] as $dep |
+      $all[] | select(.id == $dep) | .dependencies[] == .id
+    )
+  ] | if length > 0 then
+    "CIRCULAR DEPENDENCY DETECTED: \(.[].id)"
+  else
+    "No cycles detected"
+  end
+'
+```
+
+**If cycles are detected:**
+1. Identify the circular chain (A → B → A)
+2. Break the cycle by splitting one feature into sub-features
+3. Or merge dependent features into a single feature
+4. Re-run dependency analysis
+
 ---
 
 ## Phase 2: Parallel Execution Planning
@@ -137,7 +172,24 @@ Batch 3: Features depending on Batch 1 or 2 (run in parallel after Batch 2)
 }
 ```
 
-### 2.3 Create Master Coordination Document
+### 2.3 Create Main Feature Branch
+
+Before launching agents, create the integration branch where all features will be merged:
+
+```bash
+# Create and switch to the main feature branch
+git checkout -b feature/$PROJECT_NAME-main
+
+# Push to establish remote tracking
+git push -u origin feature/$PROJECT_NAME-main
+
+# Record in coordination files
+echo "feature/$PROJECT_NAME-main" > .feature-tracking/main-branch.txt
+```
+
+**Important:** All agent branches will merge INTO this branch, not directly to main/master.
+
+### 2.4 Create Master Coordination Document
 
 **Create file: `.feature-tracking/COORDINATION.md`**
 
@@ -263,10 +315,35 @@ Each agent writes to: `.feature-tracking/agents/agent-X-progress.md`
 Poll agent status files until all agents in batch complete:
 
 ```bash
-# Check all agent statuses
-for f in .feature-tracking/agents/agent-*-status.json; do
-  cat "$f" | jq '.status'
+# Check all agent statuses with polling interval
+check_agents_complete() {
+  local all_complete=true
+  for f in .feature-tracking/agents/agent-*-status.json; do
+    if [ -f "$f" ]; then
+      status=$(cat "$f" | jq -r '.status')
+      if [ "$status" != "completed" ]; then
+        all_complete=false
+        echo "Agent $(basename $f): $status"
+      fi
+    else
+      all_complete=false
+    fi
+  done
+  $all_complete
+}
+
+# Poll with 30-second intervals until all agents complete
+while ! check_agents_complete; do
+  echo "Waiting for agents to complete..."
+  sleep 30
 done
+echo "All agents complete!"
+```
+
+**Alternative: File watching** (if available)
+```bash
+# Use inotifywait for real-time monitoring (Linux)
+inotifywait -m -e modify .feature-tracking/agents/*.json
 ```
 
 ---
@@ -284,8 +361,11 @@ After all agents in a batch complete:
 ### 4.2 Merge Workflow
 
 ```bash
+# Read the main feature branch name (created in Phase 2.3)
+MAIN_BRANCH=$(cat .feature-tracking/main-branch.txt)
+
 # For each completed feature branch
-git checkout main-feature-branch
+git checkout "$MAIN_BRANCH"
 git merge --no-ff feat/agent-X-FEAT-XXX -m "merge(FEAT-XXX): [description]
 
 Implemented by: agent-X
@@ -303,8 +383,30 @@ Batch: X of Y"
 
 ### 4.3 Update Master Tracking
 
-After successful merge, update `.feature-tracking/features.json`:
+After successful merge, update `.feature-tracking/features.json` using file locking to prevent race conditions:
 
+```bash
+# Acquire lock before updating shared tracking file
+LOCKFILE=".feature-tracking/.features.lock"
+
+acquire_lock() {
+  while ! mkdir "$LOCKFILE" 2>/dev/null; do
+    echo "Waiting for lock..."
+    sleep 1
+  done
+}
+
+release_lock() {
+  rmdir "$LOCKFILE"
+}
+
+# Usage
+acquire_lock
+# Update features.json here
+release_lock
+```
+
+**Update the feature entry:**
 ```json
 {
   "id": "FEAT-XXX",

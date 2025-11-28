@@ -13,7 +13,7 @@ Creating a comprehensive Claude Code command based on best practices for long-ru
 - [x] Include incremental progress workflow
 - [x] Include git commit and progress tracking
 - [x] Include recovery mechanisms
-- [ ] Commit changes
+- [x] Commit changes
 
 ## Key Concepts to Include (from best practices)
 
