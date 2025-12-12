@@ -1,5 +1,8 @@
 # Claude Command Suite
 
+[![Run in Smithery](https://smithery.ai/badge/skills/qdhenry)](https://smithery.ai/skills?ns=qdhenry&utm_source=github&utm_medium=badge)
+
+
 ![Total Commands](https://img.shields.io/badge/Commands-148-brightgreen?style=for-the-badge)
 ![AI Agents](https://img.shields.io/badge/AI_Agents-54-red?style=for-the-badge)
 ![GitHub Release](https://img.shields.io/github/v/release/qdhenry/Claude-Command-Suite?style=for-the-badge)
