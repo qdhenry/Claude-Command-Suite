@@ -1,4 +1,7 @@
 ---
+name: rust:audit-layer-boundaries
+description: Analyze layer boundary definitions in Rust codebases, identifying mixed responsibilities and violations
+allowed-tools: Read, Grep, Glob, Bash
 author: Quintin Henry (https://github.com/qdhenry/)
 ---
 

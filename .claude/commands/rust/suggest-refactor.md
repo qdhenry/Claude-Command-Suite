@@ -1,4 +1,7 @@
 ---
+name: rust:suggest-refactor
+description: Actionable refactoring suggestions for improving clean architecture compliance in Rust projects
+allowed-tools: Read, Grep, Glob, Bash, Edit
 author: Quintin Henry (https://github.com/qdhenry/)
 ---
 

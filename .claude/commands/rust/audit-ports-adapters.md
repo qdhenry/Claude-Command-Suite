@@ -1,4 +1,7 @@
 ---
+name: rust:audit-ports-adapters
+description: Audit Ports and Adapters (Hexagonal Architecture) pattern implementation in Rust codebases
+allowed-tools: Read, Grep, Glob, Bash
 author: Quintin Henry (https://github.com/qdhenry/)
 ---
 

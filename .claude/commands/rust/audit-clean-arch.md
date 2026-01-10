@@ -1,4 +1,7 @@
 ---
+name: rust:audit-clean-arch
+description: Comprehensive audit of Rust codebase against Clean Architecture principles, identifying violations and improvement opportunities
+allowed-tools: Read, Grep, Glob, Bash
 author: Quintin Henry (https://github.com/qdhenry/)
 ---
 

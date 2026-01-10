@@ -1,4 +1,7 @@
 ---
+name: rust:audit-dependencies
+description: Deep-dive audit of dependency direction ensuring the Dependency Rule is followed in Rust projects
+allowed-tools: Read, Grep, Glob, Bash
 author: Quintin Henry (https://github.com/qdhenry/)
 ---
 
