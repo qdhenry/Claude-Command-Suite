@@ -1,5 +1,5 @@
 ---
-name: tauri:exec-js
+name: rust:tauri:exec-js
 description: Execute JavaScript code in the Tauri app's webview context
 allowed-tools: mcp__tauri-mcp__execute_js
 author: Quintin Henry (https://github.com/qdhenry/)

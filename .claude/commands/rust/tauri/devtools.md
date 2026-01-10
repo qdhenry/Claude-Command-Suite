@@ -1,5 +1,5 @@
 ---
-name: tauri:devtools
+name: rust:tauri:devtools
 description: Get DevTools connection information for debugging a Tauri application
 allowed-tools: mcp__tauri-mcp__get_devtools_info
 author: Quintin Henry (https://github.com/qdhenry/)

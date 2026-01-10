@@ -1,5 +1,5 @@
 ---
-name: tauri:stop
+name: rust:tauri:stop
 description: Stop a running Tauri application by process ID
 allowed-tools: mcp__tauri-mcp__stop_app, mcp__tauri-mcp__get_app_logs, Bash
 author: Quintin Henry (https://github.com/qdhenry/)

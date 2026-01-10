@@ -1,5 +1,5 @@
 ---
-name: tauri:health
+name: rust:tauri:health
 description: Comprehensive health check of a running Tauri application
 allowed-tools: mcp__tauri-mcp__get_app_logs, mcp__tauri-mcp__get_window_info, mcp__tauri-mcp__monitor_resources, mcp__tauri-mcp__list_ipc_handlers, mcp__tauri-mcp__execute_js
 author: Quintin Henry (https://github.com/qdhenry/)

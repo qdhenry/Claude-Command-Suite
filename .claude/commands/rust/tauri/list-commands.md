@@ -1,5 +1,5 @@
 ---
-name: tauri:list-commands
+name: rust:tauri:list-commands
 description: List all registered Tauri IPC commands (invoke handlers) in a running app
 allowed-tools: mcp__tauri-mcp__list_ipc_handlers
 author: Quintin Henry (https://github.com/qdhenry/)

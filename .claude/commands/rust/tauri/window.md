@@ -1,5 +1,5 @@
 ---
-name: tauri:window
+name: rust:tauri:window
 description: Get detailed window information including dimensions, position, and state
 allowed-tools: mcp__tauri-mcp__get_window_info
 author: Quintin Henry (https://github.com/qdhenry/)

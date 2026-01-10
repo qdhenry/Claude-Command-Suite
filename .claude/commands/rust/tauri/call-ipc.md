@@ -1,5 +1,5 @@
 ---
-name: tauri:call-ipc
+name: rust:tauri:call-ipc
 description: Call a Tauri IPC command with arguments and view the response
 allowed-tools: mcp__tauri-mcp__call_ipc_command, mcp__tauri-mcp__list_ipc_handlers
 author: Quintin Henry (https://github.com/qdhenry/)

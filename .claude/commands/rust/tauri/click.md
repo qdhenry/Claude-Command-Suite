@@ -1,5 +1,5 @@
 ---
-name: tauri:click
+name: rust:tauri:click
 description: Send a mouse click to specific coordinates in a Tauri application window
 allowed-tools: mcp__tauri-mcp__send_mouse_click, mcp__tauri-mcp__take_screenshot, mcp__tauri-mcp__get_window_info
 author: Quintin Henry (https://github.com/qdhenry/)

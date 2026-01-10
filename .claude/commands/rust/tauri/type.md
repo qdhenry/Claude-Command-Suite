@@ -1,5 +1,5 @@
 ---
-name: tauri:type
+name: rust:tauri:type
 description: Send keyboard input (text or key combinations) to a Tauri application
 allowed-tools: mcp__tauri-mcp__send_keyboard_input, mcp__tauri-mcp__take_screenshot
 author: Quintin Henry (https://github.com/qdhenry/)

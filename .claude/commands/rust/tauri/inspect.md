@@ -1,5 +1,5 @@
 ---
-name: tauri:inspect
+name: rust:tauri:inspect
 description: Full inspection of a running Tauri app - screenshot, logs, window info, and resources
 allowed-tools: mcp__tauri-mcp__take_screenshot, mcp__tauri-mcp__get_app_logs, mcp__tauri-mcp__get_window_info, mcp__tauri-mcp__monitor_resources, mcp__tauri-mcp__get_devtools_info, Read
 author: Quintin Henry (https://github.com/qdhenry/)

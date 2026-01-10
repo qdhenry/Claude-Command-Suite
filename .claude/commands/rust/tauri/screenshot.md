@@ -1,5 +1,5 @@
 ---
-name: tauri:screenshot
+name: rust:tauri:screenshot
 description: Capture a screenshot of a running Tauri application window
 allowed-tools: mcp__tauri-mcp__take_screenshot, mcp__tauri-mcp__get_window_info, Read
 author: Quintin Henry (https://github.com/qdhenry/)

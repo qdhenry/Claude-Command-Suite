@@ -1,5 +1,5 @@
 ---
-name: tauri:logs
+name: rust:tauri:logs
 description: View stdout/stderr logs from a running Tauri application
 allowed-tools: mcp__tauri-mcp__get_app_logs
 author: Quintin Henry (https://github.com/qdhenry/)

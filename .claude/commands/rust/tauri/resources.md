@@ -1,5 +1,5 @@
 ---
-name: tauri:resources
+name: rust:tauri:resources
 description: Monitor CPU, memory, and resource usage of a running Tauri application
 allowed-tools: mcp__tauri-mcp__monitor_resources
 author: Quintin Henry (https://github.com/qdhenry/)

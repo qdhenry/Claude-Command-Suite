@@ -1,5 +1,5 @@
 ---
-name: tauri:launch
+name: rust:tauri:launch
 description: Launch a Tauri desktop application and return its process ID for subsequent operations
 allowed-tools: mcp__tauri-mcp__launch_app, mcp__tauri-mcp__get_app_logs, mcp__tauri-mcp__get_window_info, Bash, Read
 author: Quintin Henry (https://github.com/qdhenry/)

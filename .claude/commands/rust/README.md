@@ -72,6 +72,23 @@ Infrastructure → Adapters → Application → Domain
 
 **The Dependency Rule:** Dependencies may only point INWARD toward the domain layer.
 
-## Related Commands
+## Tauri Commands (`/rust:tauri:*`)
 
-- `/tauri:*` - Tauri desktop application interaction commands
+Tauri desktop application interaction commands. See [`tauri/README.md`](./tauri/README.md) for full documentation.
+
+| Command | Description |
+|---------|-------------|
+| `/rust:tauri:launch` | Launch a Tauri application, returns process ID |
+| `/rust:tauri:stop` | Stop a running Tauri application |
+| `/rust:tauri:inspect` | Full inspection (screenshot, logs, resources, window) |
+| `/rust:tauri:logs` | View stdout/stderr logs |
+| `/rust:tauri:screenshot` | Capture window screenshot |
+| `/rust:tauri:window` | Get window dimensions, position, state |
+| `/rust:tauri:resources` | Monitor CPU, memory usage |
+| `/rust:tauri:devtools` | Get DevTools connection info |
+| `/rust:tauri:health` | Comprehensive health check |
+| `/rust:tauri:list-commands` | List all registered IPC commands |
+| `/rust:tauri:call-ipc` | Call a Tauri IPC command |
+| `/rust:tauri:exec-js` | Execute JavaScript in webview |
+| `/rust:tauri:click` | Send mouse click to coordinates |
+| `/rust:tauri:type` | Send keyboard input |
